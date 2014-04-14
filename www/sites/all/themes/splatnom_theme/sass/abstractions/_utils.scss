@@ -1,0 +1,6 @@
+@mixin splatnom-icons-sprite-image($file) {
+    display:    inline-block;
+    height:     splatnom-icons-sprite-height($file);
+    width:      splatnom-icons-sprite-width($file);
+    @include    splatnom-icons-sprite($file);
+}

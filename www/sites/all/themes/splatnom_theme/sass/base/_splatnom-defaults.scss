@@ -1,0 +1,47 @@
+@import "breakpoint";
+//@import "singularitygs";
+
+.l-header {
+    @include grid-span($grids, 1);
+    background: $default_grey;
+
+    a:link,
+    a:visited {
+        text-decoration:none;
+        color: white;
+    }
+}
+
+.header-content {
+    margin: 0 auto; // center it
+
+    @include breakpoint($tab, true) {
+        width: $tab;
+    }
+
+    @include breakpoint($desk, true) {
+        width: $desk;
+    }
+}
+
+.header-left {
+    @include grid-span($grids/2, 1);
+}
+
+.header-right {
+    @include grid-span($grids/2, 7);
+
+    vertical-align: top;
+}
+
+.l-main {
+    margin: 0 auto; // center it
+
+    @include breakpoint($tab, true) {
+        width: $tab;
+    }
+
+    @include breakpoint($desk, true) {
+        width: $desk;
+    }
+}
