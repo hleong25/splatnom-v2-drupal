@@ -36,10 +36,9 @@ img, media {
   float: right;
   margin-left: 0;
   margin-right: 0;
-  clear: none;
-  vertical-align: top; }
+  clear: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-defaults\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-defaults\.scss}line{font-family:\0000335}}
 .l-main {
   margin: 0 auto;
   width: 44em;

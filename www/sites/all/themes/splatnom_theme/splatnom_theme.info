@@ -21,12 +21,18 @@ scripts[] = js/splatnom-theme.behaviors.js
 ; ========================================
 ; Regions
 ; ========================================
-regions[branding] = Branding
-regions[header] = Header
-regions[navigation] = Navigation
-regions[highlighted] = Highlighted
-regions[help] = Help
+regions[header_left] = Header Left
+regions[header_right] = Header Right
 regions[content] = Content
-regions[sidebar_first] = First Sidebar
-regions[sidebar_second] = Second Sidebar
+regions[sidebar] = Sidebar
 regions[footer] = Footer
+
+;regions[branding] = Branding
+;regions[header] = Header
+;regions[navigation] = Navigation
+;regions[highlighted] = Highlighted
+;regions[help] = Help
+;regions[content] = Content
+;regions[sidebar_first] = First Sidebar
+;regions[sidebar_second] = Second Sidebar
+;regions[footer] = Footer

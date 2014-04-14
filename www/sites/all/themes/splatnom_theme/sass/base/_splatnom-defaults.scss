@@ -30,8 +30,6 @@
 
 .header-right {
     @include grid-span($grids/2, 7);
-
-    vertical-align: top;
 }
 
 .l-main {
