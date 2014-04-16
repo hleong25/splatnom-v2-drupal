@@ -10,5 +10,7 @@ features[context][] = layout-front-page
 features[ctools][] = context:context:3
 features[fe_block_boxes][] = header_login
 features[fe_block_boxes][] = header_logoff
+features[fe_block_settings][] = block-header_login
+features[fe_block_settings][] = block-header_logoff
 features[fe_block_settings][] = system-powered-by
 features[features_api][] = api:2
