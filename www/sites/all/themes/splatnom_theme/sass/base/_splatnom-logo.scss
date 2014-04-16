@@ -1,0 +1,6 @@
+@import "splatnom-logo/**/*.png";
+
+.frontpage-logo {
+    @include splatnom-logo-sprite-image(logo);
+}
+

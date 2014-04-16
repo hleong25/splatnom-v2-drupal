@@ -1,5 +1,4 @@
 @import "breakpoint";
-//@import "singularitygs";
 
 .l-header {
     @include grid-span($grids, 1);
@@ -13,15 +12,7 @@
 }
 
 .header-content {
-    margin: 0 auto; // center it
-
-    @include breakpoint($tab, true) {
-        width: $tab;
-    }
-
-    @include breakpoint($desk, true) {
-        width: $desk;
-    }
+    @extend .splatnom-page;
 }
 
 .header-left {
@@ -33,13 +24,9 @@
 }
 
 .l-main {
-    margin: 0 auto; // center it
+    @extend .splatnom-page;
+}
 
-    @include breakpoint($tab, true) {
-        width: $tab;
-    }
-
-    @include breakpoint($desk, true) {
-        width: $desk;
-    }
+.l-footer {
+    @extend .splatnom-page;
 }

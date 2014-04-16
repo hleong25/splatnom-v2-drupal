@@ -1,19 +1,12 @@
 @import "breakpoint";
 @import "splatnom-icons/**/*.png";
 
-//.homepage-logo-img {
-//    @include splatnom-icons-sprite-image(homepage-logo);
-//}
-
 .header-nologo {
     height: splatnom-icons-sprite-height(logo-mini);
 }
 
 .header-logo {
     @include splatnom-icons-sprite-image(logo-mini);
-    //@include breakpoint($desk, true) {
-    //    @include splatnom-icons-sprite-image(logo-mini);
-    //}
 }
 
 .icon {
