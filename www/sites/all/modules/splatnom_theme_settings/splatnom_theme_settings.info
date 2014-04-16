@@ -1,0 +1,10 @@
+name = Splatnom theme settings
+description = Settings for splatnom theme
+core = 7.x
+package = Splatom
+dependencies[] = block
+dependencies[] = context
+dependencies[] = ctools
+features[context][] = layout-front-page
+features[ctools][] = context:context:3
+features[features_api][] = api:2
