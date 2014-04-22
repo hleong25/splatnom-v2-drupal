@@ -1,7 +1,7 @@
 name = Splatnom theme settings
 description = Settings for splatnom theme
 core = 7.x
-package = Splatom
+package = Splatnom
 dependencies[] = block
 dependencies[] = context
 dependencies[] = ctools
