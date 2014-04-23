@@ -19,7 +19,7 @@ function splatnom_content_types_field_default_field_instances() {
         'thoroughfare' => '',
         'premise' => '',
         'locality' => '',
-        'administrative_area' => '',
+        'administrative_area' => 'CA',
         'postal_code' => '',
         'country' => 'US',
       ),
