@@ -102,7 +102,6 @@ function splatnom_content_types_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
-    2 => 'revision',
   );
   $export['node_options_restaurant_menu'] = $strongarm;
 
