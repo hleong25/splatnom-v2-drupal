@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Splatnom system settings feature.
+ */
+
+include_once 'splatnom_system_settings.features.inc';
