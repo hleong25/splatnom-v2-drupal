@@ -86,6 +86,7 @@ function _features_diff_diff($module) {
  * Run a diff on all of the features.
  */
 function _features_diff_diff_all() {
+  $output = '';
 
   // Iterate through every feature module 
   foreach (features_get_features() as $module) {
