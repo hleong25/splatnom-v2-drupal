@@ -21,14 +21,16 @@ img, media {
   margin-left: 0;
   margin-right: 0;
   clear: none;
-  background: #5f5b5a; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-defaults\.scss}line{font-family:\000038}}
+  background: #5f5b5a;
+  margin-bottom: 1em;
+  padding: 0.5em 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-defaults\.scss}line{font-family:\0000311}}
   .l-header a:link,
   .l-header a:visited {
     text-decoration: none;
     color: white; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-defaults\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-defaults\.scss}line{font-family:\0000321}}
 .header-left {
   width: 48.93617%;
   float: left;
@@ -36,7 +38,7 @@ img, media {
   margin-left: 0%;
   clear: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-defaults\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-defaults\.scss}line{font-family:\0000325}}
 .header-right {
   width: 48.93617%;
   float: right;
@@ -50,7 +52,7 @@ img, media {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-icons\.scss}line{font-family:\000034}}
 .header-nologo {
-  height: 48px; }
+  height: 52px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-icons\.scss}line{font-family:\000038}}
 .header-logo {

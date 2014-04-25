@@ -4,6 +4,9 @@
     @include grid-span($grids, 1);
     background: $default_grey;
 
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+
     a:link,
     a:visited {
         text-decoration:none;

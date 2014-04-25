@@ -2,7 +2,7 @@
 @import "splatnom-icons/**/*.png";
 
 .header-nologo {
-    height: splatnom-icons-sprite-height(logo-mini);
+    height: splatnom-icons-sprite-height(logo-mini) + 4;
 }
 
 .header-logo {
