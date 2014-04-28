@@ -141,7 +141,7 @@ function splatnom_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_restaurant_menu';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_restaurant_menu'] = $strongarm;
 
   return $export;
