@@ -67,5 +67,49 @@ function splatnom_theme_settings_context_default_contexts() {
   t('layout');
   $export['layout-front-page'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'layout-user-pages';
+  $context->description = 'The layout for user pages';
+  $context->tag = 'layout';
+  $context->conditions = array(
+    'user' => array(
+      'values' => array(
+        'administrator' => 'administrator',
+        'authenticated user' => 'authenticated user',
+      ),
+    ),
+    'user_page' => array(
+      'values' => array(
+        'form' => 'form',
+        'view' => 'view',
+      ),
+      'options' => array(
+        'mode' => 'all',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'user-login' => array(
+          'module' => 'user',
+          'delta' => 'login',
+          'region' => 'content',
+          'weight' => '-11',
+        ),
+      ),
+      'layout' => 'user',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('The layout for user pages');
+  t('layout');
+  $export['layout-user-pages'] = $context;
+
   return $export;
 }

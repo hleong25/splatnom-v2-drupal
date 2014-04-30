@@ -46,6 +46,38 @@ function splatnom_theme_settings_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['block-header_logo'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'header_logo',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'splatnom_theme' => array(
+        'region' => 'header_left',
+        'status' => 1,
+        'theme' => 'splatnom_theme',
+        'weight' => -11,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['block-header_logoff'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -81,36 +113,36 @@ function splatnom_theme_settings_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['system-powered-by'] = array(
+  $export['block-header_nologo'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'powered-by',
-    'module' => 'system',
+    'machine_name' => 'header_nologo',
+    'module' => 'block',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => '<front>',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'bartik',
-        'weight' => -9,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
-        'weight' => 10,
+        'weight' => 0,
       ),
       'splatnom_theme' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'header_left',
+        'status' => 1,
         'theme' => 'splatnom_theme',
-        'weight' => 10,
+        'weight' => -12,
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   return $export;
