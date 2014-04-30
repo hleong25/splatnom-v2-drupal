@@ -70,6 +70,42 @@ function splatnom_theme_settings_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'layout-user-new';
+  $context->description = 'The layout for new user registration';
+  $context->tag = 'layout';
+  $context->conditions = array(
+    'user' => array(
+      'values' => array(
+        'anonymous user' => 'anonymous user',
+      ),
+    ),
+    'user_page' => array(
+      'values' => array(
+        'form' => 'form',
+        'register' => 'register',
+      ),
+      'options' => array(
+        'mode' => 'all',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(),
+      'layout' => 'user-new',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('The layout for new user registration');
+  t('layout');
+  $export['layout-user-new'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'layout-user-pages';
   $context->description = 'The layout for user pages';
   $context->tag = 'layout';

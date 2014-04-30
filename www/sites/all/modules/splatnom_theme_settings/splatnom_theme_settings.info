@@ -9,6 +9,7 @@ dependencies[] = fe_block
 dependencies[] = splatnom_content_types
 features[context][] = layout-content-type-restaurant-menu
 features[context][] = layout-front-page
+features[context][] = layout-user-new
 features[context][] = layout-user-pages
 features[ctools][] = context:context:3
 features[ctools][] = strongarm:strongarm:1
