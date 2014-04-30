@@ -2,7 +2,6 @@
   <header class="l-header" role="banner">
     <div class="header-content">
         <div class="header-left">
-            <div class="header-nologo"></div>
             <?php print render($page['header_left']); ?>
         </div>
         <div class="header-right">

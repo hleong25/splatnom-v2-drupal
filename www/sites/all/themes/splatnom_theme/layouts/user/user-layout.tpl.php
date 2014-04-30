@@ -11,9 +11,6 @@
   </header>
 
   <div class="l-main">
-    <div class="l-sidebar" role="main">
-      <?php print render($page['sidebar']); ?>
-    </div>
     <div class="l-content" role="main">
       <?php print render($page['content']); ?>
     </div>
