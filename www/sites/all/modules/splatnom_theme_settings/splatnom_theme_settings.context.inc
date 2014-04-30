@@ -80,15 +80,6 @@ function splatnom_theme_settings_context_default_contexts() {
         'authenticated user' => 'authenticated user',
       ),
     ),
-    'user_page' => array(
-      'values' => array(
-        'form' => 'form',
-        'view' => 'view',
-      ),
-      'options' => array(
-        'mode' => 'all',
-      ),
-    ),
   );
   $context->reactions = array(
     'block' => array(

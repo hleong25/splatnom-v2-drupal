@@ -12,6 +12,9 @@
 
   <div class="l-main">
     <div class="l-content" role="main">
+      <a href="/user/register">Create new account</a>
+      <a href="/user">Log in</a>
+      <a href="/user/password">Request new password</a>
       <?php print render($page['content']); ?>
     </div>
   </div>
