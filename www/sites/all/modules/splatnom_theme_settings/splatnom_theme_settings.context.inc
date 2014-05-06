@@ -74,11 +74,6 @@ function splatnom_theme_settings_context_default_contexts() {
   $context->description = 'The layout for new user registration';
   $context->tag = 'layout';
   $context->conditions = array(
-    'user' => array(
-      'values' => array(
-        'anonymous user' => 'anonymous user',
-      ),
-    ),
     'user_page' => array(
       'values' => array(
         'form' => 'form',

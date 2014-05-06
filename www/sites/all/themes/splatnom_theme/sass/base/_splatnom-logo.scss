@@ -1,6 +1,12 @@
 @import "splatnom-logo/**/*.png";
 
 .frontpage-logo {
-    @include splatnom-logo-sprite-image(logo);
+
+    // default is mini logo
+    @include splatnom-logo-sprite-image(logo-mini);
+
+    @include breakpoint($desk, true) {
+        @include splatnom-logo-sprite-image(logo);
+    }
 }
 

@@ -81,6 +81,10 @@ img, media {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-logo\.scss}line{font-family:\000033}}
 .frontpage-logo {
   display: inline-block;
+  height: 76px;
+  width: 207px;
+  background-position: 0 -152px;
+  display: inline-block;
   height: 152px;
   width: 415px;
   background-position: 0 0; }
