@@ -2,10 +2,16 @@
 
 .frontpage-logo {
 
-    // default is mini logo
-    @include splatnom-logo-sprite-image(logo-mini);
+    // default logo
+    @include splatnom-logo-sprite-image(logo);
 
-    @include breakpoint($desk, true) {
+    // everything smaller than a tab
+    @include breakpoint(max-width $tab, true) {
+        @include splatnom-logo-sprite-image(logo-mini);
+    }
+
+    // everything bigger than a tab
+    @include breakpoint(min-width $tab, true) {
         @include splatnom-logo-sprite-image(logo);
     }
 }
