@@ -74,13 +74,11 @@ function splatnom_theme_settings_context_default_contexts() {
   $context->description = 'The layout for new user registration';
   $context->tag = 'layout';
   $context->conditions = array(
-    'user_page' => array(
+    'path' => array(
       'values' => array(
-        'form' => 'form',
-        'register' => 'register',
-      ),
-      'options' => array(
-        'mode' => 'all',
+        'user' => 'user',
+        'user/*' => 'user/*',
+        'users/*' => 'users/*',
       ),
     ),
   );
