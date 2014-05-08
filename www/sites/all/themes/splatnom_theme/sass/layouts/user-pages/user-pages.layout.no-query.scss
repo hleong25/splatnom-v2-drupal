@@ -2,5 +2,5 @@ $breakpoint-no-queries: true;
 $breakpoint-no-query-fallbacks: true;
 
 // Re-render everything from styles.scss but without media queries.
-@import "user.layout";
+@import "user-pages.layout";
 

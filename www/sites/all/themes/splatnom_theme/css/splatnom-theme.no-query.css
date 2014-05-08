@@ -38,7 +38,9 @@ img, media {
   float: right;
   margin-left: 0;
   margin-right: 0;
-  clear: none; }
+  clear: none;
+  font-size: 0.8em;
+  text-align: right; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/splatnom-icons\/\*\*\%5C\/\*\.png}line{font-family:\0000398}}
 .splatnom-icons-sprite, .header-logo, .icon.is-spicy, .icon.is-veggie, .icon.is-hide {

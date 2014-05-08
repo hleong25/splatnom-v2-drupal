@@ -38,13 +38,11 @@ if (arg(0) == 'user') {
 
   <div class="l-main">
     <div class="l-content" role="main">
-      <?php if (!$logged_in): ?>
-        <ul class="tabs tabs--primary links--inline">
-          <li class="<?php print $user_style['register']; ?>"><a class="<?php print $user_style['register']; ?>" href="/user/register">Create new account</a></li>
-          <li class="<?php print $user_style['login']; ?>"><a class="<?php print $user_style['login']; ?>" href="/user">Log in</a></li>
-          <li class="<?php print $user_style['password']; ?>"><a class="<?php print $user_style['password']; ?>" href="/user/password">Request new password</a></li>
-        </ul>
-      <?php endif; ?>
+      <ul class="tabs tabs--primary links--inline">
+        <li class="<?php print $user_style['register']; ?>"><a class="<?php print $user_style['register']; ?>" href="/user/register">Create new account</a></li>
+        <li class="<?php print $user_style['login']; ?>"><a class="<?php print $user_style['login']; ?>" href="/user">Log in</a></li>
+        <li class="<?php print $user_style['password']; ?>"><a class="<?php print $user_style['password']; ?>" href="/user/password">Request new password</a></li>
+      </ul>
       <?php print render($page['content']); ?>
     </div>
   </div>

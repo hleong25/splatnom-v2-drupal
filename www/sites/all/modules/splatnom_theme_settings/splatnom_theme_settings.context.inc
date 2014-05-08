@@ -70,8 +70,8 @@ function splatnom_theme_settings_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'layout-user-new';
-  $context->description = 'The layout for new user registration';
+  $context->name = 'layout-user-account';
+  $context->description = 'The layout for user account management (new, login, request password)';
   $context->tag = 'layout';
   $context->conditions = array(
     'path' => array(
@@ -81,20 +81,25 @@ function splatnom_theme_settings_context_default_contexts() {
         'users/*' => 'users/*',
       ),
     ),
+    'user' => array(
+      'values' => array(
+        'anonymous user' => 'anonymous user',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(),
-      'layout' => 'user-new',
+      'layout' => 'user-account',
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('The layout for new user registration');
+  t('The layout for user account management (new, login, request password)');
   t('layout');
-  $export['layout-user-new'] = $context;
+  $export['layout-user-account'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -112,15 +117,8 @@ function splatnom_theme_settings_context_default_contexts() {
   );
   $context->reactions = array(
     'block' => array(
-      'blocks' => array(
-        'user-login' => array(
-          'module' => 'user',
-          'delta' => 'login',
-          'region' => 'content',
-          'weight' => '-11',
-        ),
-      ),
-      'layout' => 'user',
+      'blocks' => array(),
+      'layout' => 'user-pages',
     ),
   );
   $context->condition_mode = 0;
