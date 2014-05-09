@@ -10,6 +10,69 @@
 function splatnom_content_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_menu_images-field_menu_image_item'
+  $field_instances['field_collection_item-field_menu_images-field_menu_image_item'] = array(
+    'bundle' => 'field_menu_images',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_menu_image_item',
+    'label' => 'Menu Image Item',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:fid]-[current-date:raw].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => 'images/[field_collection_item:host:content-type:machine-name]/[field_collection_item:host:nid]-[field_collection_item:host:title]',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_menu_item-field_menu_item_name'
   $field_instances['field_collection_item-field_menu_item-field_menu_item_name'] = array(
     'bundle' => 'field_menu_item',
@@ -212,8 +275,9 @@ function splatnom_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'field_collection_fieldset',
       'settings' => array(
-        'collapsed' => 0,
-        'last_item_collapsed' => 0,
+        'collapsed' => 1,
+        'field_as_label' => 'field_menu_item_name',
+        'last_item_collapsed' => 1,
       ),
       'type' => 'field_collection_fieldset',
       'weight' => 3,
@@ -288,6 +352,49 @@ function splatnom_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-restaurant_menu-field_menu_images'
+  $field_instances['node-restaurant_menu-field_menu_images'] = array(
+    'bundle' => 'restaurant_menu',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_menu_images',
+    'label' => 'Menu Images',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 34,
+    ),
+  );
+
   // Exported field_instance: 'node-restaurant_menu-field_menu_location'
   $field_instances['node-restaurant_menu-field_menu_location'] = array(
     'bundle' => 'restaurant_menu',
@@ -327,6 +434,7 @@ function splatnom_content_types_field_default_field_instances() {
       'module' => 'field_collection_fieldset',
       'settings' => array(
         'collapsed' => 0,
+        'field_as_label' => array(),
         'last_item_collapsed' => 0,
       ),
       'type' => 'field_collection_fieldset',
@@ -412,8 +520,9 @@ function splatnom_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'field_collection_fieldset',
       'settings' => array(
-        'collapsed' => 0,
-        'last_item_collapsed' => 0,
+        'collapsed' => 1,
+        'field_as_label' => 'field_menu_section_title',
+        'last_item_collapsed' => 1,
       ),
       'type' => 'field_collection_fieldset',
       'weight' => 33,
@@ -422,6 +531,8 @@ function splatnom_content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Menu Image Item');
+  t('Menu Images');
   t('Menu Item');
   t('Menu Item Name');
   t('Menu Item Notes');
