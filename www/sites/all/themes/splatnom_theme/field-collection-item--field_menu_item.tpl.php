@@ -30,9 +30,6 @@
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-    <p>field_menu_item</p>
-    <?php
-      print render($content);
-    ?>
+    <?php print render($content); ?>
   </div>
 </div>

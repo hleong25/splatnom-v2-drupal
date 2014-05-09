@@ -31,6 +31,11 @@
 
 .l-main {
     @extend .splatnom-page;
+
+    h2 {
+        // fix all h2 to not have margin-top
+        margin-top: 0;
+    }
 }
 
 .l-footer {

@@ -48,6 +48,10 @@ img, media {
   font-size: 0.8em;
   text-align: right; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/base\/_splatnom-defaults\.scss}line{font-family:\0000335}}
+.l-main h2 {
+  margin-top: 0; }
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/splatnom-icons\/\*\*\%5C\/\*\.png}line{font-family:\0000398}}
 .splatnom-icons-sprite, .header-logo, .icon.is-spicy, .icon.is-veggie, .icon.is-hide {
   background: url('../images/generated/splatnom-icons-seae2322ab7.png') no-repeat; }
