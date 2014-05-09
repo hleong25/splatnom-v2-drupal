@@ -1,0 +1,23 @@
+diff --git a/field_collection.module b/field_collection.module
+index 5692657..17d5beb 100644
+--- a/field_collection.module
++++ b/field_collection.module
+@@ -389,6 +389,18 @@ class FieldCollectionItemEntity extends Entity {
+           $query->age(FIELD_LOAD_REVISION);
+         }
+         $result = $query->execute();
++        // When revisioning is enabled, {field_collection_item_revision}
++        // might not be written at this point yet (e.g. when arriving here
++        // from field_collection_field_update().) If so, let's use the
++        // previous revision to determine the host entity.
++        if (empty($result)) {
++          $query = new EntityFieldQuery();
++          $query->fieldCondition($this->fieldInfo(), 'revision_id', $this->original->revision_id);
++          if (!$this->isInUse()) {
++            $query->age(FIELD_LOAD_REVISION);
++          }
++          $result = $query->execute();
++        }
+         list($this->hostEntityType, $data) = each($result);
+ 
+         if ($this->isInUse()) {
