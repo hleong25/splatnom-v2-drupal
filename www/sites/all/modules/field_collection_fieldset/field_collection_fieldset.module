@@ -184,7 +184,11 @@ function field_collection_fieldset_field_widget_info() {
     'field_collection_fieldset' => array(
       'label' => t('Fieldset'),
       'field types' => array('field_collection'),
-      'settings' => array('collapsed' => FALSE, 'last_item_collapsed' => FALSE),
+      'settings' => array(
+        'field_as_label' => array(),
+        'collapsed' => FALSE,
+        'last_item_collapsed' => FALSE,
+      ),
       'behaviors' => array(
         'multiple values' => FIELD_BEHAVIOR_DEFAULT,
         'default value' => FIELD_BEHAVIOR_NONE,
@@ -202,12 +206,22 @@ function field_collection_fieldset_field_widget_settings_form($field, $instance)
   $form = array();
 
   if ($widget['type'] == 'field_collection_fieldset') {
+    $form['field_as_label'] = array(
+      '#title' => t('Field as label'),
+      '#description' => t('Set a field to display as a label'),
+      '#type' => 'select',
+      '#default_value' => isset($settings['field_as_label']) ? $settings['field_as_label'] : array(),
+      '#empty_option' => t('None'),
+      '#options' => _field_collection_fieldset_get_fields(array('text', 'text_long', 'image'), $field),
+      '#weight' => 5,
+    );
+
     $form['collapsed'] = array(
       '#type' => 'checkbox',
       '#title' => t('Collapsed'),
       '#default_value' => $settings['collapsed'],
       '#description' => t('If checked, items are collapsed by default.'),
-      '#weight' => 5,
+      '#weight' => 6,
     );
 
     $form['last_item_collapsed'] = array(
@@ -215,7 +229,7 @@ function field_collection_fieldset_field_widget_settings_form($field, $instance)
       '#title' => t('Last item collapsed'),
       '#default_value' => $settings['last_item_collapsed'],
       '#description' => t('If checked, last item is collapsed by default.'),
-      '#weight' => 6,
+      '#weight' => 7,
       '#states' => array(
         'enabled' => array(
           ':input[name="instance[widget][settings][collapsed]"]' => array(
@@ -290,6 +304,7 @@ function field_collection_fieldset_field_widget_form(&$form, &$form_state, $fiel
         if (isset($items[$delta])) {
           $field_collection_item = field_collection_field_get_entity($items[$delta], $field_name);
         }
+
         // Show an empty collection if we have no existing one or it does not
         // load.
         if (empty($field_collection_item)) {
@@ -298,6 +313,34 @@ function field_collection_fieldset_field_widget_form(&$form, &$form_state, $fiel
 
         // Put our entity in the form state, so FAPI callbacks can access it.
         $field_state['entity'][$delta] = $field_collection_item;
+      }
+
+      if (!empty($instance['widget']['settings']['field_as_label'])) {
+        $field_as_label = $instance['widget']['settings']['field_as_label'];
+
+        $field_collection_item_wrapper = entity_metadata_wrapper('field_collection_item', $field_collection_item);
+
+        if ($field_value = $field_collection_item_wrapper->{$field_as_label}->value()) {
+          $info = field_info_field($field_as_label);
+          switch ($info['type']) {
+            case 'image':
+              if (!empty($field_value['alt'])) {
+                $element['#title'] = $field_value['alt'];
+              }
+              elseif (!empty($field_value['title'])) {
+                $element['#title'] = $field_value['title'];
+              }
+              else {
+                $element['#title'] = $field_value['filename'];
+              }
+              break;
+
+            case 'text':
+            case 'text_long':
+              $element['#title'] = is_array($field_value) ? strip_tags($field_value['value']) : strip_tags($field_value);
+              break;
+          }
+        }
       }
 
       field_form_set_state($field_parents, $field_name, $language, $form_state, $field_state);
@@ -356,4 +399,20 @@ function field_collection_fieldset_field_attach_form($entity_type, $entity, &$fo
       }
     }
   }
+}
+
+/*
+ * Helper functions.
+ */
+function _field_collection_fieldset_get_fields($field_types, $field) {
+  $options = array();
+  $entity_label = t('Field Collection field:');
+  $fields_info = field_info_instances('field_collection_item', $field['field_name']);
+  foreach ($fields_info as $field_info) {
+    $info = field_info_field($field_info['field_name']);
+    if (in_array($info['type'], $field_types)) {
+      $options[$field_info['field_name']] = $entity_label . ' ' . $field_info['label'];
+    }
+  }
+  return $options;
 }
