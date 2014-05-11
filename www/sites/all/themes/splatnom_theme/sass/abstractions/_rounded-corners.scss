@@ -1,0 +1,20 @@
+@mixin rounded-corner-top($radius)
+{
+    -moz-border-radius-topleft: $radius;
+    -moz-border-radius-topright: $radius;
+    -webkit-border-top-left-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin rounded-outer-corner-top()
+{
+    @include rounded-corner-top(8px);
+}
+
+@mixin rounded-inner-corner-top()
+{
+    @include rounded-corner-top(5px);
+}
+
