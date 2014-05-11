@@ -1,12 +1,11 @@
 .field--name-field-menu-section {
 
-    .field-collection-view {
-        //margin-left: 0;
-        //margin-right: 0;
+    & > .field__items > .field__item > .field-collection-view {
+        // only for menu section, no margins
+        margin: 0;
     }
 
-    .field-collection-item-field-menu-section
-    {
+    .field-collection-item-field-menu-section {
         $bgclr: $default_red;
 
         @include rounded-outer-corner-top();
