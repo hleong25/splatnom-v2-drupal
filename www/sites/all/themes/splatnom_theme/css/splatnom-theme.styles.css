@@ -152,3 +152,10 @@ img, media {
     color: black;
     text-align: center;
     padding: 0.3em 1em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_node--restaurant-menu\.scss}line{font-family:\000032}}
+.node--restaurant-menu .field--name-title {
+  color: #b61f24; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_node--restaurant-menu\.scss}line{font-family:\000037}}
+  .node--restaurant-menu .field--name-title h2 {
+    margin-bottom: 0; }

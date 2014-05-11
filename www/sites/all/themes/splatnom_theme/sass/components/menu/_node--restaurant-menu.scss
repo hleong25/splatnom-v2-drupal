@@ -1,0 +1,15 @@
+.node--restaurant-menu {
+    .field--name-title {
+        $bgclr: $default_red;
+
+        color: $bgclr;
+
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+
+    .field--name-field-menu-notes {
+    }
+}
+
