@@ -109,8 +109,9 @@ img, media {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-section\.scss}line{font-family:\000033}}
 .field--name-field-menu-section > .field__items > .field__item > .field-collection-view {
-  margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-section\.scss}line{font-family:\000038}}
+  margin: 0;
+  border-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-section\.scss}line{font-family:\0000311}}
 .field--name-field-menu-section .field-collection-item-field-menu-section {
   -moz-border-radius-topleft: 8px;
   -moz-border-radius-topright: 8px;
@@ -120,18 +121,18 @@ img, media {
   border-top-right-radius: 8px;
   border: 2px solid #751417;
   background-color: #b61f24; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-section\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-section\.scss}line{font-family:\0000320}}
   .field--name-field-menu-section .field-collection-item-field-menu-section .field-collection-container {
     background-color: white;
     margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-section\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-section\.scss}line{font-family:\0000326}}
   .field--name-field-menu-section .field-collection-item-field-menu-section .field--name-field-menu-section-title {
     border-bottom: 3px solid #751417;
     padding: 0.3em 1em;
     color: white;
     font-weight: bold;
     font-size: 110%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-section\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-section\.scss}line{font-family:\0000337}}
   .field--name-field-menu-section .field-collection-item-field-menu-section .field--name-field-menu-section-notes {
     font-size: 0.9em;
     font-weight: bold;

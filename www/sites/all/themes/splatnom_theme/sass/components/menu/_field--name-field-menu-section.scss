@@ -3,6 +3,9 @@
     & > .field__items > .field__item > .field-collection-view {
         // only for menu section, no margins
         margin: 0;
+
+        // no bottom border
+        border-bottom: 0;
     }
 
     .field-collection-item-field-menu-section {
