@@ -3,6 +3,7 @@ description = System settings for Splatnom
 core = 7.x
 package = Splatnom
 dependencies[] = ctools
+dependencies[] = path_alias_xt
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
