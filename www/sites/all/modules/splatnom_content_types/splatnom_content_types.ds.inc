@@ -17,6 +17,11 @@ function splatnom_content_types_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'restaurant_menu';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'block_restaurant_menu_navigation' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -29,10 +34,86 @@ function splatnom_content_types_ds_field_settings_info() {
 }
 
 /**
+ * Implements hook_ds_custom_fields_info().
+ */
+function splatnom_content_types_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'block_menu_section_anchor';
+  $ds_field->label = 'Block Menu Section Anchor';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'field_collection_item' => 'field_collection_item',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<div id="[field_collection_item:item-id]-[field_collection_item:field-menu-section-title]"></div>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['block_menu_section_anchor'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'block_restaurant_menu_navigation';
+  $ds_field->label = 'Block Restaurant Menu Navigation';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'views|81ea0fa54c0deb2eeaa6b37a017d4667',
+    'block_render' => '1',
+  );
+  $export['block_restaurant_menu_navigation'] = $ds_field;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_layout_settings_info().
  */
 function splatnom_content_types_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_menu_section|default';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_menu_section';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'block_menu_section_anchor',
+        1 => 'field_menu_section_title',
+        2 => 'field_menu_section_notes',
+        3 => 'field_menu_item',
+      ),
+    ),
+    'fields' => array(
+      'block_menu_section_anchor' => 'ds_content',
+      'field_menu_section_title' => 'ds_content',
+      'field_menu_section_notes' => 'ds_content',
+      'field_menu_item' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_menu_section|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -47,14 +128,16 @@ function splatnom_content_types_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_menu_notes',
         2 => 'field_menu_location',
-        3 => 'field_menu_section',
-        4 => 'field_menu_images',
+        3 => 'block_restaurant_menu_navigation',
+        4 => 'field_menu_section',
+        5 => 'field_menu_images',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_menu_notes' => 'ds_content',
       'field_menu_location' => 'ds_content',
+      'block_restaurant_menu_navigation' => 'ds_content',
       'field_menu_section' => 'ds_content',
       'field_menu_images' => 'ds_content',
     ),
