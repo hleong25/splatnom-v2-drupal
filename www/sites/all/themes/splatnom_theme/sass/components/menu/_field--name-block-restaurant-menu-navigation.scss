@@ -1,0 +1,36 @@
+.field--name-block-restaurant-menu-navigation {
+
+    text-align: right;
+
+    margin-left: 1em;
+
+    .block--views {
+        $bgclr: $default_light_grey;
+
+        @include rounded-outer-corner-top();
+
+        border: 2px solid darken($bgclr, 15%);
+        background-color: $bgclr;
+
+        .block__title {
+            border-bottom: 3px solid darken($bgclr, 15%);
+            padding: 0.3em 1em;
+            margin-bottom: 0;
+
+            color: invert($bgclr);
+            font-weight: 600;
+
+            font-size: 110%;
+        }
+
+        .view-content {
+            background-color: white;
+            padding-right: 1em;
+
+            .views-row {
+                padding: 0.2em;
+            }
+        }
+    }
+
+}

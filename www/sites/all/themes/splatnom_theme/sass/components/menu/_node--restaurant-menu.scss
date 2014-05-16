@@ -11,5 +11,38 @@
 
     .field--name-field-menu-notes {
     }
+
+    .field--name-changed-date {
+        text-align: right;
+
+        font-size: 75%;
+
+        .field__label {
+            font-weight: normal;
+            display: inline-block;
+        }
+
+        .field__items {
+            display: inline-block;
+        }
+    }
+
+    .field--name-field-menu-location {
+        .field-collection-view {
+            margin: 0;
+        }
+    }
+
+    .group-header {
+        & > .field-collection-container {
+            border: 0;
+        }
+    }
+
+    .group-middle {
+        & > .field-collection-container {
+            border: 0;
+        }
+    }
 }
 

@@ -6,6 +6,9 @@
 
         // no bottom border
         border-bottom: 0;
+
+        padding-top: 0;
+        padding-bottom: 1em;
     }
 
     .field-collection-item-field-menu-section {
@@ -16,14 +19,12 @@
         border: 2px solid darken($bgclr, 15%);
         background-color: $bgclr;
 
-        .field-collection-container
-        {
+        .field-collection-container {
             background-color: white;
             margin-bottom: 0;
         }
 
-        .field--name-field-menu-section-title
-        {
+        .field--name-field-menu-section-title {
             border-bottom: 3px solid darken($bgclr, 15%);
             padding: 0.3em 1em;
 
@@ -33,8 +34,7 @@
             font-size: 110%;
         }
 
-        .field--name-field-menu-section-notes
-        {
+        .field--name-field-menu-section-notes {
             font-size: 0.9em;
             font-weight: bold;
 
