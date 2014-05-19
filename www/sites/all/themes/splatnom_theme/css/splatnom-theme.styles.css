@@ -113,9 +113,8 @@ img, media {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-block-restaurant-menu-navigation\.scss}line{font-family:\000031}}
 .field--name-block-restaurant-menu-navigation {
-  text-align: right;
   margin-left: 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-block-restaurant-menu-navigation\.scss}line{font-family:\000037}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-block-restaurant-menu-navigation\.scss}line{font-family:\000035}}
   .field--name-block-restaurant-menu-navigation .block--views {
     -moz-border-radius-topleft: 8px;
     -moz-border-radius-topright: 8px;
@@ -125,7 +124,7 @@ img, media {
     border-top-right-radius: 8px;
     border: 2px solid #b4b0ae;
     background-color: #d9d7d6; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-block-restaurant-menu-navigation\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-block-restaurant-menu-navigation\.scss}line{font-family:\0000313}}
     .field--name-block-restaurant-menu-navigation .block--views .block__title {
       border-bottom: 3px solid #b4b0ae;
       padding: 0.3em 1em;
@@ -133,11 +132,11 @@ img, media {
       color: #262829;
       font-weight: 600;
       font-size: 110%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-block-restaurant-menu-navigation\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-block-restaurant-menu-navigation\.scss}line{font-family:\0000324}}
     .field--name-block-restaurant-menu-navigation .block--views .view-content {
       background-color: white;
-      padding-right: 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-block-restaurant-menu-navigation\.scss}line{font-family:\0000330}}
+      padding-left: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-block-restaurant-menu-navigation\.scss}line{font-family:\0000328}}
       .field--name-block-restaurant-menu-navigation .block--views .view-content .views-row {
         padding: 0.2em; }
 
