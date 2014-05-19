@@ -65,6 +65,7 @@ function splatnom_content_types_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['block_caching'] = '4';
   $export['restaurant_menu_navigation'] = $view;
 
   return $export;

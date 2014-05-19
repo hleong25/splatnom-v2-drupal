@@ -13,7 +13,7 @@ function splatnom_content_types_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['views-81ea0fa54c0deb2eeaa6b37a017d4667'] = array(
-    'cache' => -1,
+    'cache' => 4,
     'custom' => 0,
     'delta' => '81ea0fa54c0deb2eeaa6b37a017d4667',
     'module' => 'views',

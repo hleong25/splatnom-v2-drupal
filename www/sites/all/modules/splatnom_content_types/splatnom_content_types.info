@@ -58,6 +58,7 @@ features[variable][] = comment_form_location_restaurant_menu
 features[variable][] = comment_preview_restaurant_menu
 features[variable][] = comment_restaurant_menu
 features[variable][] = comment_subject_field_restaurant_menu
+features[variable][] = date_format_custom_medium_date_time
 features[variable][] = field_bundle_settings_node__restaurant_menu
 features[variable][] = menu_options_restaurant_menu
 features[variable][] = menu_parent_restaurant_menu

@@ -27,6 +27,11 @@ function splatnom_content_types_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'changed_date' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'ds_post_date_custom_medium_date_time',
+    ),
   );
   $export['node|restaurant_menu|default'] = $ds_fieldsetting;
 
@@ -121,29 +126,41 @@ function splatnom_content_types_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'restaurant_menu';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_3col_stacked_fluid';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'header' => array(
         0 => 'title',
         1 => 'field_menu_notes',
         2 => 'field_menu_location',
+      ),
+      'right' => array(
         3 => 'block_restaurant_menu_navigation',
+      ),
+      'middle' => array(
         4 => 'field_menu_section',
         5 => 'field_menu_images',
       ),
+      'footer' => array(
+        6 => 'changed_date',
+      ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
-      'field_menu_notes' => 'ds_content',
-      'field_menu_location' => 'ds_content',
-      'block_restaurant_menu_navigation' => 'ds_content',
-      'field_menu_section' => 'ds_content',
-      'field_menu_images' => 'ds_content',
+      'title' => 'header',
+      'field_menu_notes' => 'header',
+      'field_menu_location' => 'header',
+      'block_restaurant_menu_navigation' => 'right',
+      'field_menu_section' => 'middle',
+      'field_menu_images' => 'middle',
+      'changed_date' => 'footer',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'header' => 'div',
+      'left' => 'div',
+      'middle' => 'div',
+      'right' => 'div',
+      'footer' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

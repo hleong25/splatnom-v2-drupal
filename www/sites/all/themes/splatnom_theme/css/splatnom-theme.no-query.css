@@ -180,8 +180,7 @@ img, media {
     margin-bottom: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_node--restaurant-menu\.scss}line{font-family:\0000315}}
 .node--restaurant-menu .field--name-changed-date {
-  text-align: right;
-  font-size: 75%; }
+  font-size: 65%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_node--restaurant-menu\.scss}line{font-family:\0000320}}
   .node--restaurant-menu .field--name-changed-date .field__label {
     font-weight: normal;
