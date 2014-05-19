@@ -1,11 +1,21 @@
 .node--restaurant-menu {
-    .field--name-title {
+
+    // style the title
+    //   it can be the 'title' or a custom block
+    .field--name-title,
+    .field--name-block-title-with-self-link {
         $bgclr: $default_red;
 
         color: $bgclr;
 
         h2 {
             margin-bottom: 0;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration:none;
+            color: $bgclr;
         }
     }
 

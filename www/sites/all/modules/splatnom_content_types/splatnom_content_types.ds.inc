@@ -22,7 +22,7 @@ function splatnom_content_types_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'title' => array(
+    'block_title_with_self_link' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
@@ -77,6 +77,24 @@ function splatnom_content_types_ds_custom_fields_info() {
   );
   $export['block_restaurant_menu_navigation'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'block_title_with_self_link';
+  $ds_field->label = 'Block Title with self link';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<h2><a href="[current-page:url]">[current-page:title]</a></h2>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['block_title_with_self_link'] = $ds_field;
+
   return $export;
 }
 
@@ -130,7 +148,7 @@ function splatnom_content_types_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'header' => array(
-        0 => 'title',
+        0 => 'block_title_with_self_link',
         1 => 'field_menu_notes',
         2 => 'field_menu_location',
       ),
@@ -146,7 +164,7 @@ function splatnom_content_types_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'title' => 'header',
+      'block_title_with_self_link' => 'header',
       'field_menu_notes' => 'header',
       'field_menu_location' => 'header',
       'block_restaurant_menu_navigation' => 'right',
