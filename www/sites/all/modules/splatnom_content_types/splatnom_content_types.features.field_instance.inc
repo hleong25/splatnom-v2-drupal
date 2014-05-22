@@ -21,7 +21,7 @@ function splatnom_content_types_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -37,7 +37,7 @@ function splatnom_content_types_field_default_field_instances() {
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'filefield_paths' => array(
-        'active_updating' => 0,
+        'active_updating' => 1,
         'file_name' => array(
           'options' => array(
             'pathauto' => 0,
@@ -50,9 +50,9 @@ function splatnom_content_types_field_default_field_instances() {
             'pathauto' => 0,
             'transliterate' => 0,
           ),
-          'value' => 'images/[field_collection_item:host:content-type:machine-name]/[field_collection_item:host:nid]-[field_collection_item:host:title]',
+          'value' => 'images/[field_collection_item:host:content-type:name]/[field_collection_item:host:nid]-[field_collection_item:host:title]',
         ),
-        'retroactive_update' => 0,
+        'retroactive_update' => 1,
       ),
       'filefield_paths_enabled' => 1,
       'max_filesize' => '',
@@ -358,22 +358,15 @@ function splatnom_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-restaurant_menu-field_menu_images'
   $field_instances['node-restaurant_menu-field_menu_images'] = array(
     'bundle' => 'restaurant_menu',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 5,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -390,9 +383,13 @@ function splatnom_content_types_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'field_collection',
-      'settings' => array(),
+      'settings' => array(
+        'collapsed' => 0,
+        'field_as_label' => '',
+        'last_item_collapsed' => 0,
+      ),
       'type' => 'field_collection_embed',
       'weight' => 34,
     ),
@@ -503,7 +500,7 @@ function splatnom_content_types_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',

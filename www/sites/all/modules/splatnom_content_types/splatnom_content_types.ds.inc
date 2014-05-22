@@ -17,8 +17,13 @@ function splatnom_content_types_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'restaurant_menu';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'block_restaurant_menu_images_gal' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'block_restaurant_menu_navigation' => array(
-      'weight' => '3',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -152,12 +157,12 @@ function splatnom_content_types_ds_layout_settings_info() {
         1 => 'field_menu_notes',
         2 => 'field_menu_location',
       ),
-      'right' => array(
-        3 => 'block_restaurant_menu_navigation',
-      ),
       'middle' => array(
-        4 => 'field_menu_section',
-        5 => 'field_menu_images',
+        3 => 'field_menu_section',
+      ),
+      'right' => array(
+        4 => 'block_restaurant_menu_navigation',
+        5 => 'block_restaurant_menu_images_gal',
       ),
       'footer' => array(
         6 => 'changed_date',
@@ -167,9 +172,9 @@ function splatnom_content_types_ds_layout_settings_info() {
       'block_title_with_self_link' => 'header',
       'field_menu_notes' => 'header',
       'field_menu_location' => 'header',
-      'block_restaurant_menu_navigation' => 'right',
       'field_menu_section' => 'middle',
-      'field_menu_images' => 'middle',
+      'block_restaurant_menu_navigation' => 'right',
+      'block_restaurant_menu_images_gal' => 'right',
       'changed_date' => 'footer',
     ),
     'classes' => array(),
