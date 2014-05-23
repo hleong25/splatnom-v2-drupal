@@ -25,6 +25,11 @@ function splatnom_theme_settings_context_default_contexts() {
         'node_form' => '1',
       ),
     ),
+    'views' => array(
+      'values' => array(
+        'restaurant_menu_images_gallery' => 'restaurant_menu_images_gallery',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
