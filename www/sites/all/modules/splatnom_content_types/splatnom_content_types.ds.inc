@@ -12,6 +12,51 @@ function splatnom_content_types_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'ds_views|restaurant_menu_images_gallery-block-fields|default';
+  $ds_fieldsetting->entity_type = 'ds_views';
+  $ds_fieldsetting->bundle = 'restaurant_menu_images_gallery-block-fields';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_menu_image_item' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['ds_views|restaurant_menu_images_gallery-block-fields|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'ds_views|restaurant_menu_images_gallery-page_1-fields|default';
+  $ds_fieldsetting->entity_type = 'ds_views';
+  $ds_fieldsetting->bundle = 'restaurant_menu_images_gallery-page_1-fields';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_menu_image_item' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['ds_views|restaurant_menu_images_gallery-page_1-fields|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_menu_section|default';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_menu_section';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'block_menu_section_anchor' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['field_collection_item|field_menu_section|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|restaurant_menu|default';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'restaurant_menu';
@@ -66,6 +111,21 @@ function splatnom_content_types_ds_custom_fields_info() {
     'use_token' => 1,
   );
   $export['block_menu_section_anchor'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'block_restaurant_menu_images_gal';
+  $ds_field->label = 'Block Restaurant Menu Images Gallery';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'views|0bb00382d381efc9cfeb899a45d11ad2',
+    'block_render' => '1',
+  );
+  $export['block_restaurant_menu_images_gal'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;

@@ -1,18 +1,19 @@
-.field--name-block-restaurant-menu-navigation {
+.field--name-block-restaurant-menu-images-gal {
 
     margin-left: 1em;
     margin-bottom: 1em;
 
     .block--views {
         $bgclr: $default_light_grey;
+        $bgclr_dark: darken($bgclr, 15%);
 
         @include rounded-outer-corner-top();
 
-        border: 2px solid darken($bgclr, 15%);
+        border: 2px solid $bgclr_dark;
         background-color: $bgclr;
 
         .block__title {
-            border-bottom: 3px solid darken($bgclr, 15%);
+            border-bottom: 3px solid $bgclr_dark;
             padding: 0.3em 1em;
             margin-bottom: 0;
 
@@ -24,11 +25,21 @@
 
         .view-content {
             background-color: white;
-            padding-left: 1em;
+            padding: 1em;
 
             .views-row {
-                padding: 0.2em;
+                display: inline-block;
+
+                img {
+                    border: 1px $bgclr_dark solid;
+                }
             }
+        }
+
+        .view-footer {
+            background-color: white;
+            text-align: center;
+            padding-bottom: 0.5em;
         }
     }
 

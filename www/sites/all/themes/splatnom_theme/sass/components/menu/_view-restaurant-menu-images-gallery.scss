@@ -1,0 +1,24 @@
+.view-restaurant-menu-images-gallery {
+
+    $bgclr: $default_light_grey;
+    $bgclr_dark: darken($bgclr, 15%);
+
+    .view-header {
+    }
+
+    .attachment {
+        .view-restaurant-menu-images-gallery {
+        }
+    }
+
+    .view-content {
+        .views-row {
+            display: inline-block;
+
+            img {
+                border: 1px $bgclr_dark solid;
+            }
+        }
+    }
+
+}
