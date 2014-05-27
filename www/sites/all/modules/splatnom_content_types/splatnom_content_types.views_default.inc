@@ -150,6 +150,8 @@ function splatnom_content_types_views_default_views() {
 
   /* Display: All images */
   $handler = $view->new_display('page', 'All images', 'page_1');
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -164,7 +166,7 @@ function splatnom_content_types_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Go back to <?php print l(\'menu\', \'node/[nid]\'); ?>.';
+  $handler->display->display_options['header']['area']['content'] = 'Go back to <?php print l(\'%1\', \'node/[nid]\', array(\'html\' => TRUE)); ?>.';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
