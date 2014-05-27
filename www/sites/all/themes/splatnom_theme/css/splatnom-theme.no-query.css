@@ -246,9 +246,18 @@ a {
 .node--restaurant-menu .group-middle > .field-collection-container {
   border: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_view-restaurant-menu-images-gallery\.scss}line{font-family:\0000315}}
-.view-restaurant-menu-images-gallery .view-content .views-row {
-  display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_view-restaurant-menu-images-gallery\.scss}line{font-family:\0000318}}
-  .view-restaurant-menu-images-gallery .view-content .views-row img {
-    border: 1px #b4b0ae solid; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_view-restaurant-menu-images-gallery\.scss}line{font-family:\000037}}
+.view-restaurant-menu-images-gallery .view-header a {
+  color: #b61f24; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_view-restaurant-menu-images-gallery\.scss}line{font-family:\0000314}}
+.view-restaurant-menu-images-gallery .attachment .view-restaurant-menu-images-gallery {
+  margin-top: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_view-restaurant-menu-images-gallery\.scss}line{font-family:\0000319}}
+.view-restaurant-menu-images-gallery .view-content {
+  margin-top: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_view-restaurant-menu-images-gallery\.scss}line{font-family:\0000322}}
+  .view-restaurant-menu-images-gallery .view-content .views-row {
+    display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_view-restaurant-menu-images-gallery\.scss}line{font-family:\0000325}}
+    .view-restaurant-menu-images-gallery .view-content .views-row img {
+      border: 1px #b4b0ae solid; }

@@ -4,14 +4,21 @@
     $bgclr_dark: darken($bgclr, 15%);
 
     .view-header {
+        a {
+            $bgclr: $default_red;
+            color: $bgclr;
+        }
     }
 
     .attachment {
         .view-restaurant-menu-images-gallery {
+            margin-top: 1em;
         }
     }
 
     .view-content {
+        margin-top: 1em;
+
         .views-row {
             display: inline-block;
 
