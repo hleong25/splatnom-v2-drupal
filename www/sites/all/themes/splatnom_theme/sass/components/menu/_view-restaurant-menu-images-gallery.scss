@@ -4,6 +4,8 @@
     $bgclr_dark: darken($bgclr, 15%);
 
     .view-header {
+        margin-bottom: 1em;
+
         a {
             $bgclr: $default_red;
             color: $bgclr;
@@ -11,14 +13,13 @@
     }
 
     .attachment {
+        margin-bottom: 1em;
+
         .view-restaurant-menu-images-gallery {
-            margin-top: 1em;
         }
     }
 
     .view-content {
-        margin-top: 1em;
-
         .views-row {
             display: inline-block;
 
