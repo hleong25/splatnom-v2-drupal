@@ -5,9 +5,9 @@ package = "Display Suite"
 dependencies[] = ds
 dependencies[] = devel
 
-; Information added by Drupal.org packaging script on 2014-04-17
-version = "7.x-2.6+24-dev"
+; Information added by Drupal.org packaging script on 2014-05-01
+version = "7.x-2.6+26-dev"
 core = "7.x"
 project = "ds"
-datestamp = "1397740761"
+datestamp = "1398933828"
 

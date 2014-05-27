@@ -186,8 +186,10 @@ function field_collection_fieldset_field_widget_info() {
       'field types' => array('field_collection'),
       'settings' => array(
         'field_as_label' => array(),
+        'replace_label' => FALSE,
         'collapsed' => FALSE,
         'last_item_collapsed' => FALSE,
+        'new_item_open' => FALSE,
       ),
       'behaviors' => array(
         'multiple values' => FIELD_BEHAVIOR_DEFAULT,
@@ -206,14 +208,30 @@ function field_collection_fieldset_field_widget_settings_form($field, $instance)
   $form = array();
 
   if ($widget['type'] == 'field_collection_fieldset') {
+    $options = array('text', 'text_long', 'image');
     $form['field_as_label'] = array(
       '#title' => t('Field as label'),
       '#description' => t('Set a field to display as a label'),
       '#type' => 'select',
       '#default_value' => isset($settings['field_as_label']) ? $settings['field_as_label'] : array(),
       '#empty_option' => t('None'),
-      '#options' => _field_collection_fieldset_get_fields(array('text', 'text_long', 'image'), $field),
+      '#options' => _field_collection_fieldset_get_fields($options, $field),
       '#weight' => 5,
+    );
+
+    $form['replace_label'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Replace a label on "@label @delta" pattern.'),
+      '#default_value' => $settings['replace_label'],
+      '#description' => t('If checked, the label of fieldset will be overwritten on "@label @delta" pattern.'),
+      '#weight' => 6,
+      '#states' => array(
+        'enabled' => array(
+          ':input[name="instance[widget][settings][field_as_label]"]' => array(
+            'value' => '',
+          ),
+        ),
+      ),
     );
 
     $form['collapsed'] = array(
@@ -221,7 +239,7 @@ function field_collection_fieldset_field_widget_settings_form($field, $instance)
       '#title' => t('Collapsed'),
       '#default_value' => $settings['collapsed'],
       '#description' => t('If checked, items are collapsed by default.'),
-      '#weight' => 6,
+      '#weight' => 7,
     );
 
     $form['last_item_collapsed'] = array(
@@ -229,10 +247,28 @@ function field_collection_fieldset_field_widget_settings_form($field, $instance)
       '#title' => t('Last item collapsed'),
       '#default_value' => $settings['last_item_collapsed'],
       '#description' => t('If checked, last item is collapsed by default.'),
-      '#weight' => 7,
+      '#weight' => 8,
       '#states' => array(
         'enabled' => array(
           ':input[name="instance[widget][settings][collapsed]"]' => array(
+            'checked' => TRUE,
+          ),
+        ),
+      ),
+    );
+
+    $form['new_item_open'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('New item force open'),
+      '#default_value' => $settings['new_item_open'],
+      '#description' => t('If checked, new item added will be open.'),
+      '#weight' => 9,
+      '#states' => array(
+        'enabled' => array(
+          ':input[name="instance[widget][settings][collapsed]"]' => array(
+            'checked' => TRUE,
+          ),
+          ':input[name="instance[widget][settings][last_item_collapsed]"]' => array(
             'checked' => TRUE,
           ),
         ),
@@ -264,7 +300,11 @@ function field_collection_fieldset_field_widget_form(&$form, &$form_state, $fiel
       // Nest the field collection item entity form in a dedicated parent space,
       // by appending [field_name, langcode, delta] to the current parent space.
       // That way the form values of the field collection item are separated.
-      $parents = array_merge($field_parents, array($field_name, $language, $delta));
+      $parents = array_merge($field_parents, array(
+        $field_name,
+        $language,
+        $delta,
+      ));
 
       $element += array(
         '#element_validate' => array('field_collection_field_widget_embed_validate'),
@@ -275,10 +315,19 @@ function field_collection_fieldset_field_widget_form(&$form, &$form_state, $fiel
       $element['#collapsible'] = TRUE;
       $element['#collapsed'] = $instance['widget']['settings']['collapsed'];
 
-      $element['#title'] = t($instance['label'] . ' @delta', array('@delta' => $delta + 1));
-      if (function_exists('i18n_string_object_translate')) {
-        $translated = i18n_string_object_translate('field_instance', $instance);
-        $element['#title'] = format_string('@label @delta', array('@label' => $translated['label'], '@delta' => $delta + 1));
+      if ($instance['widget']['settings']['replace_label']) {
+        $element['#title'] = t('@label @delta', array('@label' => $instance['label'], '@delta' => $delta + 1));
+        if (function_exists('i18n_string_object_translate')) {
+          $translated = i18n_string_object_translate('field_instance', $instance);
+          $element['#title'] = format_string('@label @delta', array('@label' => $translated['label'], '@delta' => $delta + 1));
+        }
+      }
+      else {
+        $element['#title'] = $instance['label'];
+        if (function_exists('i18n_string_object_translate')) {
+          $translated = i18n_string_object_translate('field_instance', $instance);
+          $element['#title'] = $translated['label'];
+        }
       }
 
       $field_state = field_form_get_state($field_parents, $field_name, $language, $form_state);
@@ -287,7 +336,8 @@ function field_collection_fieldset_field_widget_form(&$form, &$form_state, $fiel
         && $field['cardinality'] == FIELD_CARDINALITY_UNLIMITED) {
 
         // Do not add a blank item. Also see
-        // field_collection_fieldset_field_attach_form() for correcting #max_delta.
+        // field_collection_fieldset_field_attach_form() for correcting
+        // #max_delta.
         $recursion--;
         return FALSE;
       }
@@ -308,6 +358,11 @@ function field_collection_fieldset_field_widget_form(&$form, &$form_state, $fiel
         // Show an empty collection if we have no existing one or it does not
         // load.
         if (empty($field_collection_item)) {
+          if ($instance['widget']['settings']['collapsed'] && $instance['widget']['settings']['last_item_collapsed']
+            && $instance['widget']['settings']['new_item_open']) {
+
+            $element['#collapsed'] = FALSE;
+          }
           $field_collection_item = entity_create('field_collection_item', array('field_name' => $field_name));
         }
 
@@ -401,8 +456,16 @@ function field_collection_fieldset_field_attach_form($entity_type, $entity, &$fo
   }
 }
 
-/*
- * Helper functions.
+/**
+ * Get fields from field collection field.
+ *
+ * @param array $field_types
+ *   The allowed field types.
+ * @param array $field
+ *   The field structure being configured.
+ *
+ * @return array
+ *   An array of fields keyed by the field_name.
  */
 function _field_collection_fieldset_get_fields($field_types, $field) {
   $options = array();
