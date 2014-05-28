@@ -186,7 +186,14 @@ a {
 .field--name-field-menu-item .field-collection-view {
   padding-top: 5px;
   padding-bottom: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-item\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-item\.scss}line{font-family:\000038}}
+.field--name-field-menu-item .field--name-field-menu-item-name {
+  display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-item\.scss}line{font-family:\0000312}}
+.field--name-field-menu-item .field--name-menu-item-attribute-images {
+  display: inline-block;
+  margin-left: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/henry\/work\/splatnom-v2-drupal\/www\/sites\/all\/themes\/splatnom_theme\/sass\/components\/menu\/_field--name-field-menu-item\.scss}line{font-family:\0000317}}
 .field--name-field-menu-item .field--name-field-menu-item-notes {
   font-size: 65%; }
 

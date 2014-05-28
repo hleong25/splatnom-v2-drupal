@@ -42,6 +42,21 @@ function splatnom_content_types_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'field_collection_item|field_menu_item|default';
+  $ds_fieldsetting->entity_type = 'field_collection_item';
+  $ds_fieldsetting->bundle = 'field_menu_item';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'menu_item_attribute_images' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['field_collection_item|field_menu_item|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'field_collection_item|field_menu_section|default';
   $ds_fieldsetting->entity_type = 'field_collection_item';
   $ds_fieldsetting->bundle = 'field_menu_section';
@@ -160,6 +175,30 @@ function splatnom_content_types_ds_custom_fields_info() {
   );
   $export['block_title_with_self_link'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'menu_item_attribute_images';
+  $ds_field->label = 'Menu Item Attribute Images';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'field_collection_item' => 'field_collection_item',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+$is_spicy = $entity->field_menu_item_is_spicy[\'und\'][0][\'value\'];
+$is_veggie = $entity->field_menu_item_is_vegetarian[\'und\'][0][\'value\'];
+
+if ($is_spicy) print \'<span class="icon is-spicy">&nbsp;</span>\';
+if ($is_veggie) print \'<span class="icon is-veggie">&nbsp;</span>\';
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['menu_item_attribute_images'] = $ds_field;
+
   return $export;
 }
 
@@ -224,6 +263,44 @@ function splatnom_content_types_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['ds_views|restaurant_menu_images_gallery-page_1-fields|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'field_collection_item|field_menu_item|default';
+  $ds_layout->entity_type = 'field_collection_item';
+  $ds_layout->bundle = 'field_menu_item';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_3col_stacked_fluid';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'middle' => array(
+        0 => 'field_menu_item_name',
+        1 => 'menu_item_attribute_images',
+      ),
+      'footer' => array(
+        2 => 'field_menu_item_notes',
+      ),
+    ),
+    'fields' => array(
+      'field_menu_item_name' => 'middle',
+      'menu_item_attribute_images' => 'middle',
+      'field_menu_item_notes' => 'footer',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'header' => 'div',
+      'left' => 'div',
+      'middle' => 'div',
+      'right' => 'div',
+      'footer' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['field_collection_item|field_menu_item|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
