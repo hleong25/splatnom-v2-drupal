@@ -9,7 +9,8 @@
 # Default to development if environment is not set.
 saved = environment
 if (environment.nil?)
-  environment = :development
+  #environment = :development
+  environment = :production
 else
   environment = saved
 end
@@ -35,6 +36,7 @@ require 'sass-globbing'
 # You can select your preferred output style here (:expanded, :nested, :compact
 # or :compressed).
 output_style = (environment == :production) ? :expanded : :nested
+#output_style = (environment == :production) ? :compressed : :nested
 
 # To enable relative paths to assets via compass helper functions. Since Drupal
 # themes can be installed in multiple locations, we don't need to worry about

@@ -3,7 +3,7 @@
 .frontpage-logo {
 
     // default logo
-    @include splatnom-logo-sprite-image(logo);
+    //@include splatnom-logo-sprite-image(logo);
 
     // everything smaller than a tab
     @include breakpoint(max-width $tab, true) {

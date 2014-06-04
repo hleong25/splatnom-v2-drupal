@@ -1,3 +1,42 @@
+// https://gist.github.com/brubrant/3166895
+// DEPRECATION WARNING on line 81 of splatnom-logo/**\/*.png:
+//   @extending an outer selector from within @media is deprecated.
+//   You may only @extend selectors within the same directive.
+//   This will be an error in Sass 3.3.
+//   It can only work once @extend is supported natively in the browser.
+//
+// http://compass-style.org/reference/compass/helpers/sprites/
+@mixin get-sprite($map, $sprite, $repeat: no-repeat, $height: true, $width: true) {
+
+  //http://compass-style.org/reference/compass/helpers/sprites/#sprite-file
+  $sprite-image: sprite-file($map, $sprite);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-url
+  $sprite-map: sprite-url($map);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-position
+  $sprite-position: sprite-position($map, $sprite);
+
+  // Returns background
+  background: $sprite-map $sprite-position $repeat;
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $height == true {
+    // Gets the height of the sprite-image
+    $sprite-height: image-height($sprite-image);
+    // Returns the height
+    height: $sprite-height; }
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $width == true {
+    // Gets the width of the sprite-image
+    $sprite-width: image-width($sprite-image);
+    // Returns the width
+    width: $sprite-width; }
+}
+
 // images from images/splatnom-icons
 @mixin splatnom-icons-sprite-image($file) {
     display:    inline-block;
@@ -9,8 +48,6 @@
 // images from images/splatnom-logo
 @mixin splatnom-logo-sprite-image($file) {
     display:    inline-block;
-    height:     splatnom-logo-sprite-height($file);
-    width:      splatnom-logo-sprite-width($file);
-    @include    splatnom-logo-sprite($file);
+    @include    get-sprite($splatnom-logo-sprites, $file);
 }
 
