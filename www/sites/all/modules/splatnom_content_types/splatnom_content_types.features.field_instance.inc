@@ -278,11 +278,8 @@ function splatnom_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'geofield',
-        'settings' => array(
-          'data' => 'full',
-        ),
-        'type' => 'geofield_wkt',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
     ),
