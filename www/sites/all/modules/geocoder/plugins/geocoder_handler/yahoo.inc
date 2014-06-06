@@ -1,4 +1,5 @@
 <?php
+// $Id$
 
 /**
  * @file
@@ -59,16 +60,9 @@ function geocoder_yahoo_field($field, $field_item) {
 }
 
 function _geocoder_yahoo_geometry(&$data) {
-  if (!isset($data->ResultSet)) {
+  if (!isset($data->ResultSet->Results[0]->longitude, $data->ResultSet->Results[0])) {
     return NULL;
   }
-  // Yahoo Placefinder API v2.
-  elseif (isset($data->ResultSet->Result->longitude)) {
-    return new Point($data->ResultSet->Result->longitude, $data->ResultSet->Result->latitude);
-  }
-  // Yahoo Placefinder API v1.
-  elseif (isset($data->ResultSet->Results[0]->longitude)) {
-    return new Point($data->ResultSet->Results[0]->longitude, $data->ResultSet->Results[0]->latitude);
-  }
+  return new Point($data->ResultSet->Results[0]->longitude, $data->ResultSet->Results[0]->latitude);
 }
 
