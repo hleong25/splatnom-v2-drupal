@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Implements hook_date_popup_process_alter()
+ */
+function splatnom_date_popup_process_alter(&$element, &$form_state, $context) {
+    //dpm($element);
+    //dpm($form_state);
+    //dpm($context);
+
+    //dpm($form_state);
+
+    //$element['date']['#description'] = '';
+
+    //$form_state['complete form']['#info']['filter-field_event_dates_value']['description'] = '';
+
+    $desc = &$form_state['complete form']['#info']['filter-field_event_dates_value']['description'];
+
+    $hint = &$element['date']['#description'];
+
+    $hint = trim($hint);
+
+    $desc .= " ($hint)";
+    $hint  = '';
+}
+

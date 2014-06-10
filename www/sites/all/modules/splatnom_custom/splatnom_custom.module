@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_init().
+ */
+function splatnom_custom_init()
+{
+    module_load_include('inc', 'splatnom_custom', 'modules/theme_geofield_proximity');
+}
+

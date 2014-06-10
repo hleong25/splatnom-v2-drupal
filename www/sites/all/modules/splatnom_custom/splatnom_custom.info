@@ -1,0 +1,4 @@
+name = Splatnom Custom Modules
+description = A collection of custom modules for splatnom
+core = 7.x
+package = Splatnom
