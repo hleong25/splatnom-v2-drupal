@@ -1,0 +1,6 @@
+name = Splatnom dev modules
+description = Custom development modules for Splatnom
+core = 7.x
+package = Splatnom
+dependencies[] = splatnom_custom
+features[features_api][] = api:2
