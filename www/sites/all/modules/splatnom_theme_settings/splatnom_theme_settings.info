@@ -10,6 +10,7 @@ dependencies[] = splatnom_content_types
 dependencies[] = views
 features[context][] = layout-content-type-restaurant-menu
 features[context][] = layout-front-page
+features[context][] = layout-search-menus
 features[context][] = layout-user-account
 features[context][] = layout-user-pages
 features[ctools][] = context:context:3
