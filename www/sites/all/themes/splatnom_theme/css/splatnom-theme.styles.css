@@ -278,3 +278,23 @@ a {
 .view-restaurant-menu-images-gallery .view-content .views-row img {
   border: 1px #b4b0ae solid;
 }
+
+.views-exposed-form-proximity-search-for-restaurant-menu-page .views-exposed-form {
+  width: 35em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.views-exposed-form-proximity-search-for-restaurant-menu-page .description {
+  font-size: 0.75em;
+  margin-top: 3px;
+}
+.views-exposed-form-proximity-search-for-restaurant-menu-page #edit-query {
+  width: 15em;
+}
+.views-exposed-form-proximity-search-for-restaurant-menu-page #edit-location-origin {
+  width: 10em;
+}
+.views-exposed-form-proximity-search-for-restaurant-menu-page .views-submit-button #edit-submit-proximity-search-for-restaurant-menu {
+  margin-top: 0;
+}
