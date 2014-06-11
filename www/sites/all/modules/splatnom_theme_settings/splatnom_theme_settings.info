@@ -9,6 +9,7 @@ dependencies[] = fe_block
 dependencies[] = splatnom_content_types
 dependencies[] = views
 features[context][] = layout-content-type-restaurant-menu
+features[context][] = layout-default-splatnom
 features[context][] = layout-front-page
 features[context][] = layout-search-menus
 features[context][] = layout-user-account
