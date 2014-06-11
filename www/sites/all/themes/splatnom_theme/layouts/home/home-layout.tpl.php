@@ -13,7 +13,8 @@
   <div class="l-main">
     <div class="l-content" role="main">
       <div class="frontpage-logo"></div>
-      <?php print render($page['content']); ?>
+      <?php print render($page['front_page_content']); ?>
+      <?php //print render($page['content']); ?>
     </div>
   </div>
 

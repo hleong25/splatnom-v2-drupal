@@ -60,7 +60,14 @@ function splatnom_theme_settings_context_default_contexts() {
   );
   $context->reactions = array(
     'block' => array(
-      'blocks' => array(),
+      'blocks' => array(
+        'block-6' => array(
+          'module' => 'block',
+          'delta' => '6',
+          'region' => 'front_page_content',
+          'weight' => '-10',
+        ),
+      ),
       'layout' => 'home',
     ),
   );

@@ -6,6 +6,7 @@ template = home-layout
 regions[header_left] = Header Left
 regions[header_right] = Header Right
 regions[content] = Content
+regions[front_page_content] = Front Page Content
 regions[footer] = Footer
 
 ; Styles
