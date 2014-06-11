@@ -117,8 +117,9 @@ function features_export_form($form, $form_state, $feature = NULL) {
     ),
   );
   // If recreating this feature, disable machine name field to ensure the
-  // machine name cannot be changed.
-  if (isset($feature)) {
+  // machine name cannot be changed, unless user role has granted permission to
+  // edit machine name of disabled features.
+  if (isset($feature) && ($feature->status || !user_access('rename features'))) {
     $form['info']['module_name']['#value'] = $feature_name;
     $form['info']['module_name']['#disabled'] = TRUE;
   }
@@ -985,7 +986,7 @@ function features_admin_form($form, $form_state) {
   ksort($features);
   foreach ($features as $name => $module) {
     $package_title = !empty($module->info['package']) ? $module->info['package'] : t('Other');
-    $package = strtolower(preg_replace('/[^a-zA-Z0-9-]+/', '-', $package_title));
+    $package = 'package_' . strtolower(preg_replace('/[^a-zA-Z0-9-]+/', '-', $package_title));
 
     // Set up package elements
     if (!isset($form[$package])) {

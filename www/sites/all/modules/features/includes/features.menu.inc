@@ -296,16 +296,13 @@ function menu_links_features_rebuild_ordered($menu_links, $reset = FALSE) {
         foreach ($unordered as $key => $link) {
           $identifier = menu_links_features_identifier($link);
           $parent = isset($link['parent_identifier']) ? $link['parent_identifier'] : '';
-          if (empty($parent)) {
-            $ordered[$identifier] = 0;
-            $all_links[$identifier] = $link;
-            unset($unordered[$key]);
+          $weight = 0;
+          if (isset($ordered[$parent])) {
+            $weight = $ordered[$parent] + 1;
           }
-          elseif (isset($ordered[$parent])) {
-            $ordered[$identifier] = $ordered[$parent] + 1;
-            $all_links[$identifier] = $link;
-            unset($unordered[$key]);
-          }
+          $ordered[$identifier] = $weight;
+          $all_links[$identifier] = $link;
+          unset($unordered[$key]);
         }
       } while (count($unordered) < $current);
     }
@@ -357,10 +354,11 @@ function features_menu_link_load($identifier) {
     list($menu_name, $link_path) = explode(':', $identifier, 2);
   }
   $links = db_select('menu_links')
-     ->fields('menu_links', array('menu_name', 'mlid', 'plid', 'link_path', 'router_path', 'link_title', 'options', 'module', 'hidden', 'external', 'has_children', 'expanded', 'weight', 'customized'))
-     ->condition('menu_name', $menu_name)
-     ->condition('link_path', $link_path)
-     ->execute()
+    ->fields('menu_links', array('menu_name', 'mlid', 'plid', 'link_path', 'router_path', 'link_title', 'options', 'module', 'hidden', 'external', 'has_children', 'expanded', 'weight', 'customized'))
+    ->condition('menu_name', $menu_name)
+    ->condition('link_path', $link_path)
+    ->addTag('features_menu_link')
+    ->execute()
     ->fetchAllAssoc('mlid');
 
   foreach($links as $link) {
@@ -392,11 +390,14 @@ function features_menu_link_load($identifier) {
 
     foreach($links as $link) {
       $link->options = unserialize($link->options);
-
-      // title or previous identifier matches
-      if ((isset($link->options['identifier']) && strcmp($link->options['identifier'], $identifier) == 0)
-          || (isset($clean_title) && strcmp(features_clean_title($link->link_title), $clean_title) == 0)) {
-
+      // Links with a stored identifier must only be matched on that identifier,
+      // to prevent cross over assumptions.
+      if (isset($link->options['identifier'])) {
+        if (strcmp($link->options['identifier'], $identifier) == 0) {
+          return (array)$link;
+        }
+      }
+      elseif ((strcmp(features_clean_title($link->link_title), $clean_title) == 0)) {
         return (array)$link;
       }
     }
