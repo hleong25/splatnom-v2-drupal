@@ -14,8 +14,7 @@ function splatnom_theme_settings_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Front page search';
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'front_page_search';
-  $fe_block_boxes->body = '<?php /*copy and pasted from the proximity search page*/ ?>
-<form id="views-exposed-form-proximity-search-for-restaurant-menu-page" class="views-exposed-form-proximity-search-for-restaurant-menu-page" action="/search/menus" method="get" accept-charset="UTF-8">
+  $fe_block_boxes->body = '<form id="views-exposed-form-proximity-search-for-restaurant-menu-page" class="views-exposed-form-proximity-search-for-restaurant-menu-page" action="/search/menus" method="get" accept-charset="UTF-8">
     <div>
         <div class="views-exposed-form">
             <div class="views-exposed-widgets clearfix">
@@ -68,7 +67,7 @@ function splatnom_theme_settings_default_fe_block_boxes() {
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Header Logoff';
-  $fe_block_boxes->format = 'filtered_html';
+  $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'header_logoff';
   $fe_block_boxes->body = '<a href="/user/logout">log out</a>';
 
