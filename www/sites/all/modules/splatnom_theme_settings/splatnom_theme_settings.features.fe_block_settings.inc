@@ -34,10 +34,10 @@ function splatnom_theme_settings_default_fe_block_settings() {
         'weight' => 0,
       ),
       'splatnom_theme' => array(
-        'region' => 'content',
+        'region' => 'front_page_content',
         'status' => 1,
         'theme' => 'splatnom_theme',
-        'weight' => 0,
+        'weight' => -15,
       ),
     ),
     'title' => '',
