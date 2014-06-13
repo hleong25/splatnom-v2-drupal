@@ -1,3 +1,5 @@
+@import "breakpoint";
+
 .views-exposed-form-proximity-search-for-restaurant-menu-page {
     .views-exposed-form {
         width: 35em;
@@ -21,5 +23,32 @@
         #edit-submit-proximity-search-for-restaurant-menu {
             margin-top: 0;
         }
+    }
+}
+
+@include breakpoint(max-width $tab, true) {
+    .views-exposed-form-proximity-search-for-restaurant-menu-page {
+        $max_width: 15em;
+
+        text-align: center;
+
+        .views-exposed-form {
+            width: $max_width;
+            @include center-block;
+        }
+
+        .views-exposed-widget {
+            display: block;
+            float: none;
+        }
+
+        #edit-query {
+            width: $max_width;
+        }
+
+        #edit-location-origin {
+            width: $max_width;
+        }
+
     }
 }
