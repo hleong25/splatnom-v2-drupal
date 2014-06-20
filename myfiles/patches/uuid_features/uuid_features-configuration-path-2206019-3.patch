@@ -1,0 +1,9 @@
+diff --git a/uuid_features.info b/uuid_features.info
+index 8220792..27be913 100644
+--- a/uuid_features.info
++++ b/uuid_features.info
+@@ -5,3 +5,4 @@ dependencies[] = features
+ dependencies[] = uuid
+ dependencies[] = entity
+ package = Features
++configure = admin/config/content/uuid_features
