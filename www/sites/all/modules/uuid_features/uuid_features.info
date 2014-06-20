@@ -5,6 +5,7 @@ dependencies[] = features
 dependencies[] = uuid
 dependencies[] = entity
 package = Features
+configure = admin/config/content/uuid_features
 
 ; Information added by Drupal.org packaging script on 2014-02-22
 version = "7.x-1.0-alpha4"
