@@ -78,12 +78,12 @@ function splatnom_content_types_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'block_restaurant_menu_images_gal' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'block_restaurant_menu_navigation' => array(
-      'weight' => '4',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -93,7 +93,7 @@ function splatnom_content_types_ds_field_settings_info() {
       'format' => 'default',
     ),
     'changed_date' => array(
-      'weight' => '6',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'ds_post_date_custom_medium_date_time',
     ),
