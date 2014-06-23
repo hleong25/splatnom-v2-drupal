@@ -3,6 +3,7 @@ description = "Provides bulk upload for image fields located inside field collec
 core = 7.x
 
 dependencies[] = field_collection
+dependencies[] = filefield_sources
 dependencies[] = plupload
 ; Information added by drupal.org packaging script on 2012-10-01
 version = "7.x-1.0-alpha1"
