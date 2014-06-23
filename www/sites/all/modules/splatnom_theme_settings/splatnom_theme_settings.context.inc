@@ -13,41 +13,6 @@ function splatnom_theme_settings_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'layout-content-type-restaurant-menu';
-  $context->description = 'The layout for the content type restaurant menu';
-  $context->tag = 'layout';
-  $context->conditions = array(
-    'node' => array(
-      'values' => array(
-        'restaurant_menu' => 'restaurant_menu',
-      ),
-      'options' => array(
-        'node_form' => '1',
-      ),
-    ),
-    'views' => array(
-      'values' => array(
-        'restaurant_menu_images_gallery' => 'restaurant_menu_images_gallery',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(),
-      'layout' => 'restaurant-menu',
-    ),
-  );
-  $context->condition_mode = 0;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('The layout for the content type restaurant menu');
-  t('layout');
-  $export['layout-content-type-restaurant-menu'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
   $context->name = 'layout-default-splatnom';
   $context->description = 'The default layout for everything';
   $context->tag = 'layout';
@@ -114,33 +79,6 @@ function splatnom_theme_settings_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'layout-search-menus';
-  $context->description = 'The layout for searching menus';
-  $context->tag = 'layout';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        'search/menus' => 'search/menus',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(),
-      'layout' => 'search-menus',
-    ),
-  );
-  $context->condition_mode = 0;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('The layout for searching menus');
-  t('layout');
-  $export['layout-search-menus'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
   $context->name = 'layout-user-account';
   $context->description = 'The layout for user account management (new, login, request password)';
   $context->tag = 'layout';
@@ -171,34 +109,6 @@ function splatnom_theme_settings_context_default_contexts() {
   t('The layout for user account management (new, login, request password)');
   t('layout');
   $export['layout-user-account'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'layout-user-pages';
-  $context->description = 'The layout for user pages';
-  $context->tag = 'layout';
-  $context->conditions = array(
-    'user' => array(
-      'values' => array(
-        'administrator' => 'administrator',
-        'authenticated user' => 'authenticated user',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(),
-      'layout' => 'user-pages',
-    ),
-  );
-  $context->condition_mode = 0;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('The layout for user pages');
-  t('layout');
-  $export['layout-user-pages'] = $context;
 
   return $export;
 }
