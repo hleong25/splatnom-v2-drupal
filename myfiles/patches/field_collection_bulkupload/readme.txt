@@ -1,0 +1,2 @@
+Add module filefield_sources for field_collection_bulkupload
+
