@@ -180,6 +180,18 @@ a {
 .field--name-field-menu-item .field--name-field-menu-item-notes {
   font-size: 65%;
 }
+.field--name-field-menu-item .group-divider {
+  color: gray;
+}
+.field--name-field-menu-item .group-divider-left {
+  text-align: left;
+}
+.field--name-field-menu-item .group-divider-center {
+  text-align: center;
+}
+.field--name-field-menu-item .group-divider-right {
+  text-align: right;
+}
 
 .field--name-field-menu-section > .field__items > .field__item > .field-collection-view {
   margin: 0;

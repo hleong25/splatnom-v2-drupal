@@ -17,5 +17,24 @@
     .field--name-field-menu-item-notes {
         font-size: 65%;
     }
+
+    .group-divider {
+        //$divider_color: darken($default_light_grey, 35%);
+        $divider_color: gray;
+        color: $divider_color;
+        //border-bottom: 1px solid $divider_color;
+    }
+
+    .group-divider-left {
+        text-align: left;
+    }
+
+    .group-divider-center {
+        text-align: center;
+    }
+
+    .group-divider-right {
+        text-align: right;
+    }
 }
 
