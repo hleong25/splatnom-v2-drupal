@@ -94,6 +94,117 @@ function splatnom_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_menu_item-field_menu_item_is_divider_centr'
+  $field_instances['field_collection_item-field_menu_item-field_menu_item_is_divider_centr'] = array(
+    'bundle' => 'field_menu_item',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_menu_item_is_divider_centr',
+    'label' => 'Is Divider Center',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_menu_item-field_menu_item_is_divider_left'
+  $field_instances['field_collection_item-field_menu_item-field_menu_item_is_divider_left'] = array(
+    'bundle' => 'field_menu_item',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_menu_item_is_divider_left',
+    'label' => 'Is Divider Left',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_menu_item-field_menu_item_is_divider_right'
+  $field_instances['field_collection_item-field_menu_item-field_menu_item_is_divider_right'] = array(
+    'bundle' => 'field_menu_item',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_menu_item_is_divider_right',
+    'label' => 'Is Divider Right',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_menu_item-field_menu_item_is_spicy'
   $field_instances['field_collection_item-field_menu_item-field_menu_item_is_spicy'] = array(
     'bundle' => 'field_menu_item',
@@ -126,7 +237,7 @@ function splatnom_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 
@@ -162,7 +273,7 @@ function splatnom_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 6,
     ),
   );
 
@@ -627,6 +738,9 @@ function splatnom_content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Is Divider Center');
+  t('Is Divider Left');
+  t('Is Divider Right');
   t('Is Spicy');
   t('Is Vegetarian');
   t('Menu Image Item');
