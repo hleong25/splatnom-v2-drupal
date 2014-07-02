@@ -10,10 +10,16 @@
 
         h2 {
             margin-bottom: 0;
+
+            a {
+                color: $bgclr;
+            }
+
+            display: inline-block;
         }
 
-        a {
-            color: $bgclr;
+        .menu-edit {
+            // empty
         }
     }
 

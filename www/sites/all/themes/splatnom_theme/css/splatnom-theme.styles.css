@@ -250,9 +250,10 @@ a {
 .node--restaurant-menu .field--name-title h2,
 .node--restaurant-menu .field--name-block-title-with-self-link h2 {
   margin-bottom: 0;
+  display: inline-block;
 }
-.node--restaurant-menu .field--name-title a,
-.node--restaurant-menu .field--name-block-title-with-self-link a {
+.node--restaurant-menu .field--name-title h2 a,
+.node--restaurant-menu .field--name-block-title-with-self-link h2 a {
   color: #b61f24;
 }
 .node--restaurant-menu .field--name-changed-date {
