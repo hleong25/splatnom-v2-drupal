@@ -169,7 +169,7 @@ function splatnom_content_types_ds_custom_fields_info() {
   $ds_field->properties = array(
     'code' => array(
       'value' => '<h2><a href="[current-page:url]">[current-page:title]</a></h2>
-<?php if (user_access(\'administer site configuration\')): ?>
+<?php if (user_access(\'administer site configuration\') || user_access(\'edit any restaurant_menu content\')): ?>
 <span class="menu-edit"><a href="[current-page:url]/edit">edit</a></span>
 <?php endif; ?>',
       'format' => 'php_code',
