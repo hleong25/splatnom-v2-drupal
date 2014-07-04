@@ -16,7 +16,6 @@ function splatnom_system_settings_default_roles_permissions() {
     'weight' => 3,
     'permissions' => array(
       'access content' => TRUE,
-      'edit any restaurant_menu content' => TRUE,
       'edit own restaurant_menu content' => TRUE,
       'use text format ds_code' => TRUE,
       'use text format filtered_html' => TRUE,
