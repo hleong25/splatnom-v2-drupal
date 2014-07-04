@@ -169,9 +169,24 @@ function splatnom_content_types_ds_custom_fields_info() {
   $ds_field->properties = array(
     'code' => array(
       'value' => '<h2><a href="[current-page:url]">[current-page:title]</a></h2>
-<?php if (user_access(\'administer site configuration\') || user_access(\'edit any restaurant_menu content\')): ?>
+<?php
+global $user;
+
+$current_uid = $user->uid;
+
+$node = node_load(arg(1));
+$node_uid = $node->uid;
+
+$can_edit = user_access(\'administer site configuration\');
+$can_edit |= user_access(\'edit own restaurant_menu content\')
+                   && ($current_uid > 0)
+                   && ($current_uid == $node_uid);
+
+if ($can_edit): ?>
 <span class="menu-edit"><a href="[current-page:url]/edit">edit</a></span>
-<?php endif; ?>',
+<?php endif; ?>
+<?php //global $user; kpr(user_role_permissions($user->roles)); ?>
+',
       'format' => 'php_code',
     ),
     'use_token' => 1,
