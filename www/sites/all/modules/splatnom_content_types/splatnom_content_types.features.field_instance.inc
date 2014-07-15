@@ -55,7 +55,7 @@ function splatnom_content_types_field_default_field_instances() {
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
-      'max_filesize' => '',
+      'max_filesize' => '5MB',
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
@@ -558,6 +558,179 @@ function splatnom_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'field_collection_item-field_new_menu_images-field_new_menu_image_item'
+  $field_instances['field_collection_item-field_new_menu_images-field_new_menu_image_item'] = array(
+    'bundle' => 'field_new_menu_images',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'file',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_new_menu_image_item',
+    'label' => 'New Menu Image Item',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 1,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:fid]-[current-date:raw].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => 'images/[field_collection_item:host:content-type:name]/[field_collection_item:host:nid]-[field_collection_item:host:title]',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '5 MB',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'fc_plupload' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'preview_image_style' => 'medium',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-new_restaurant_menu-field_new_menu_images'
+  $field_instances['node-new_restaurant_menu-field_new_menu_images'] = array(
+    'bundle' => 'new_restaurant_menu',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => '',
+          'delete' => 'Delete',
+          'description' => 0,
+          'edit' => '',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_new_menu_images',
+    'label' => 'Images',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(
+        'collapsed' => FALSE,
+        'field_as_label' => array(),
+        'last_item_collapsed' => FALSE,
+        'new_item_open' => FALSE,
+        'replace_label' => FALSE,
+      ),
+      'type' => 'field_collection_embed',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-new_restaurant_menu-field_new_menu_notes'
+  $field_instances['node-new_restaurant_menu-field_new_menu_notes'] = array(
+    'bundle' => 'new_restaurant_menu',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_new_menu_notes',
+    'label' => 'Notes',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-restaurant_menu-field_menu_images'
   $field_instances['node-restaurant_menu-field_menu_images'] = array(
     'bundle' => 'restaurant_menu',
@@ -738,6 +911,7 @@ function splatnom_content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Images');
   t('Is Divider Center');
   t('Is Divider Left');
   t('Is Divider Right');
@@ -755,6 +929,8 @@ function splatnom_content_types_field_default_field_instances() {
   t('Menu Section');
   t('Menu Section Notes');
   t('Menu Section Title');
+  t('New Menu Image Item');
+  t('Notes');
 
   return $field_instances;
 }

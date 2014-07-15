@@ -71,7 +71,7 @@ function splatnom_theme_settings_default_fe_block_settings() {
         'region' => 'header_right',
         'status' => 1,
         'theme' => 'splatnom_theme',
-        'weight' => 0,
+        'weight' => -15,
       ),
     ),
     'title' => '',
@@ -138,7 +138,39 @@ function splatnom_theme_settings_default_fe_block_settings() {
         'region' => 'header_right',
         'status' => 1,
         'theme' => 'splatnom_theme',
+        'weight' => -14,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['block-header_new_menu_link'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'header_new_menu_link',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
         'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'splatnom_theme' => array(
+        'region' => 'header_right',
+        'status' => 1,
+        'theme' => 'splatnom_theme',
+        'weight' => -16,
       ),
     ),
     'title' => '',

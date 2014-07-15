@@ -52,6 +52,13 @@ a {
   font-size: 0.8em;
   text-align: right;
 }
+.header-right .block {
+  display: inline-block;
+  margin-left: 0.5em;
+}
+.header-right .block a {
+  text-decoration: underline;
+}
 
 .l-main h2 {
   margin-top: 0;

@@ -1,0 +1,16 @@
+name = Splatnom static system settings
+description = Static system settings for Splatnom
+core = 7.x
+package = Splatnom
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = splatnom_system_settings
+dependencies[] = strongarm
+dependencies[] = uuid_features
+__drupal_alter_by_ref[][node][page] = page
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[uuid_node][] = 461edfa2-f6bf-45f8-9fd2-d2f2f934f4bb
+features[uuid_node][] = 5d89bd66-d7d8-41bc-88c5-3e3a5e1eec3c
+features[variable][] = site_403
+features[variable][] = site_404

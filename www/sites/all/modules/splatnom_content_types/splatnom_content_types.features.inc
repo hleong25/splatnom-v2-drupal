@@ -31,6 +31,14 @@ function splatnom_content_types_views_api($module = NULL, $api = NULL) {
  */
 function splatnom_content_types_node_info() {
   $items = array(
+    'new_restaurant_menu' => array(
+      'name' => t('New Restaurant Menu'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'restaurant_menu' => array(
       'name' => t('Restaurant Menu'),
       'base' => 'node_content',

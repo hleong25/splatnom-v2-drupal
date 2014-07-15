@@ -51,7 +51,7 @@ function splatnom_theme_settings_default_fe_block_boxes() {
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Header Login';
-  $fe_block_boxes->format = 'filtered_html';
+  $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'header_login';
   $fe_block_boxes->body = '<a href="/user">login</a>';
 
@@ -72,6 +72,14 @@ function splatnom_theme_settings_default_fe_block_boxes() {
   $fe_block_boxes->body = '<a href="/user/logout">log out</a>';
 
   $export['header_logoff'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Header New Menu Link';
+  $fe_block_boxes->format = 'php_code';
+  $fe_block_boxes->machine_name = 'header_new_menu_link';
+  $fe_block_boxes->body = '<a href="/new-restaurant-menu/add">new menu</a>';
+
+  $export['header_new_menu_link'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Header No Logo';

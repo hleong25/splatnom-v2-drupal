@@ -72,6 +72,31 @@ function splatnom_content_types_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|new_restaurant_menu|default';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'new_restaurant_menu';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'block_title_with_self_link' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'author' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'author_linked',
+    ),
+    'post_date' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'ds_post_date_custom_medium_date_time',
+    ),
+  );
+  $export['node|new_restaurant_menu|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|restaurant_menu|default';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'restaurant_menu';
@@ -353,6 +378,48 @@ function splatnom_content_types_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['field_collection_item|field_menu_section|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|new_restaurant_menu|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'new_restaurant_menu';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_3col_stacked_fluid';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'header' => array(
+        0 => 'block_title_with_self_link',
+        1 => 'author',
+        2 => 'post_date',
+      ),
+      'middle' => array(
+        3 => 'field_new_menu_notes',
+        4 => 'field_new_menu_images',
+      ),
+    ),
+    'fields' => array(
+      'block_title_with_self_link' => 'header',
+      'author' => 'header',
+      'post_date' => 'header',
+      'field_new_menu_notes' => 'middle',
+      'field_new_menu_images' => 'middle',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'header' => 'div',
+      'left' => 'div',
+      'middle' => 'div',
+      'right' => 'div',
+      'footer' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|new_restaurant_menu|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
