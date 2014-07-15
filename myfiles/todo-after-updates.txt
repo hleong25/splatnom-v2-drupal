@@ -1,0 +1,16 @@
+1. Custom date/time
+    URL: <site>/admin/config/regional/date-time
+    Name: Custom Medium Date Time
+    Format: 15 Jul 2014 - 12:35am
+
+2. Error pages
+    URL: <site>/admin/config/system/site-information
+    Default 403: page/403 (redirects to /node/#)
+    Default 404: page/404 (redirects to /node/#)
+
+3. URL aliases
+    URL: <site>/admin/config/search/path
+    Content Type: New Restaurant Menu
+        Alias: new-restaurant-menu/add
+        System: node/add/new-restaurant-menu
+
