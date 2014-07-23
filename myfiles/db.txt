@@ -2,3 +2,6 @@
 username: hleong25_dv2
 password: FVrBzP_EdUNC
 
+[hleong25_menu_drupal_v1]
+username: hleong25_mdv1
+password: 5?oTo?Myf7k!

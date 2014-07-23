@@ -1,14 +1,26 @@
-1. Custom date/time
+1. Edit drupal/.htaccess
+    https://www.drupal.org/node/520700#comment-1819902
+    Find the RewriteEngine on section, modify
+    From: RewriteRule ^ index.php [L]
+    To: RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+
+2. Modify global blocks
+
+2. Custom date/time
     URL: <site>/admin/config/regional/date-time
     Name: Custom Medium Date Time
     Format: 15 Jul 2014 - 12:35am
 
-2. Error pages
+3. Error pages paths
+    Access Denied: page/403
+    Page not found: page/404
+
+4. Error pages
     URL: <site>/admin/config/system/site-information
     Default 403: page/403 (redirects to /node/#)
     Default 404: page/404 (redirects to /node/#)
 
-3. URL aliases
+5. URL aliases
     URL: <site>/admin/config/search/path
     Content Type: New Restaurant Menu
         Existing system path (System): node/add/new-restaurant-menu
