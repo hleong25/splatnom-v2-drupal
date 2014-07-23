@@ -10,6 +10,7 @@ dependencies[] = ctools
 dependencies[] = diff
 dependencies[] = ds_format
 dependencies[] = ds_forms
+dependencies[] = ds_ui
 dependencies[] = entity_token
 dependencies[] = features
 dependencies[] = features_diff
