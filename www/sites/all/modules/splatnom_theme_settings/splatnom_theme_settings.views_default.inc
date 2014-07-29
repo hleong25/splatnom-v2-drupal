@@ -72,41 +72,14 @@ function splatnom_theme_settings_views_default_views() {
   $handler->display->display_options['fields']['field_menu_location_address']['table'] = 'field_data_field_menu_location_address';
   $handler->display->display_options['fields']['field_menu_location_address']['field'] = 'field_menu_location_address';
   $handler->display->display_options['fields']['field_menu_location_address']['relationship'] = 'field_menu_location_value';
-  $handler->display->display_options['fields']['field_menu_location_address']['label'] = 'Address';
+  $handler->display->display_options['fields']['field_menu_location_address']['label'] = '';
+  $handler->display->display_options['fields']['field_menu_location_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_menu_location_address']['click_sort_column'] = 'country';
   $handler->display->display_options['fields']['field_menu_location_address']['settings'] = array(
     'use_widget_handlers' => 1,
     'format_handlers' => array(
       'address' => 'address',
     ),
-  );
-  /* Field: Field collection item: Menu Location Geocode (field_menu_location_geocode) - proximity */
-  $handler->display->display_options['fields']['field_geofield_distance']['id'] = 'field_geofield_distance';
-  $handler->display->display_options['fields']['field_geofield_distance']['table'] = 'field_data_field_menu_location_geocode';
-  $handler->display->display_options['fields']['field_geofield_distance']['field'] = 'field_geofield_distance';
-  $handler->display->display_options['fields']['field_geofield_distance']['relationship'] = 'field_menu_location_value';
-  $handler->display->display_options['fields']['field_geofield_distance']['label'] = '';
-  $handler->display->display_options['fields']['field_geofield_distance']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_geofield_distance']['precision'] = '0';
-  $handler->display->display_options['fields']['field_geofield_distance']['source'] = 'exposed_geofield_filter';
-  $handler->display->display_options['fields']['field_geofield_distance']['geofield_proximity_manual'] = array(
-    'lat' => '',
-    'lon' => '',
-  );
-  $handler->display->display_options['fields']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_menu_location_geocode';
-  $handler->display->display_options['fields']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_menu_location_geocode';
-  $handler->display->display_options['fields']['field_geofield_distance']['radius_of_earth'] = '3959';
-  /* Field: Field collection item: Menu Location Geocode */
-  $handler->display->display_options['fields']['field_menu_location_geocode']['id'] = 'field_menu_location_geocode';
-  $handler->display->display_options['fields']['field_menu_location_geocode']['table'] = 'field_data_field_menu_location_geocode';
-  $handler->display->display_options['fields']['field_menu_location_geocode']['field'] = 'field_menu_location_geocode';
-  $handler->display->display_options['fields']['field_menu_location_geocode']['relationship'] = 'field_menu_location_value';
-  $handler->display->display_options['fields']['field_menu_location_geocode']['click_sort_column'] = 'geom';
-  $handler->display->display_options['fields']['field_menu_location_geocode']['type'] = 'geofield_latlon';
-  $handler->display->display_options['fields']['field_menu_location_geocode']['settings'] = array(
-    'data' => 'full',
-    'format' => 'decimal_degrees',
-    'labels' => 1,
   );
   /* Sort criterion: Field collection item: Menu Location Geocode (field_menu_location_geocode) - proximity */
   $handler->display->display_options['sorts']['field_geofield_distance']['id'] = 'field_geofield_distance';

@@ -3,6 +3,8 @@
 .views-exposed-form-proximity-search-for-restaurant-menu-page {
     .views-exposed-form {
         width: 35em;
+        text-align: center;
+
         @include center-block;
     }
 
@@ -19,6 +21,12 @@
         width: 10em;
     }
 
+    .form-type-geofield-proximity {
+        .form-item-location-origin {
+            margin: 0;
+        }
+    }
+
     .views-submit-button {
         #edit-submit-proximity-search-for-restaurant-menu {
             margin-top: 0;
@@ -29,8 +37,6 @@
 @include breakpoint(max-width $tab, true) {
     .views-exposed-form-proximity-search-for-restaurant-menu-page {
         $max_width: 15em;
-
-        text-align: center;
 
         .views-exposed-form {
             width: $max_width;

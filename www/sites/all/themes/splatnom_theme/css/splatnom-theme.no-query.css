@@ -285,8 +285,16 @@ a {
   border: 1px #b4b0ae solid;
 }
 
+.view-proximity-search-for-restaurant-menu .view-content .views-row {
+  margin-bottom: 1em;
+}
+.view-proximity-search-for-restaurant-menu .view-content .views-row .views-field-title a {
+  color: #b61f24;
+}
+
 .views-exposed-form-proximity-search-for-restaurant-menu-page .views-exposed-form {
   width: 35em;
+  text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -301,13 +309,13 @@ a {
 .views-exposed-form-proximity-search-for-restaurant-menu-page #edit-location-origin {
   width: 10em;
 }
+.views-exposed-form-proximity-search-for-restaurant-menu-page .form-type-geofield-proximity .form-item-location-origin {
+  margin: 0;
+}
 .views-exposed-form-proximity-search-for-restaurant-menu-page .views-submit-button #edit-submit-proximity-search-for-restaurant-menu {
   margin-top: 0;
 }
 
-.views-exposed-form-proximity-search-for-restaurant-menu-page {
-  text-align: center;
-}
 .views-exposed-form-proximity-search-for-restaurant-menu-page .views-exposed-form {
   width: 15em;
   display: block;
