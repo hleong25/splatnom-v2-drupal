@@ -323,6 +323,9 @@ a {
 .views-exposed-form-proximity-search-for-restaurant-menu-page #edit-location-origin {
   width: 10em;
 }
+.views-exposed-form-proximity-search-for-restaurant-menu-page .form-type-geofield-proximity {
+  margin: 0;
+}
 .views-exposed-form-proximity-search-for-restaurant-menu-page .form-type-geofield-proximity .form-item-location-origin {
   margin: 0;
 }
