@@ -10,6 +10,43 @@
 function splatnom_content_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_menu_images-field_er_restaurant_menu_item'
+  $field_instances['field_collection_item-field_menu_images-field_er_restaurant_menu_item'] = array(
+    'bundle' => 'field_menu_images',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_er_restaurant_menu_item',
+    'label' => 'ER Restaurant Menu Item',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_menu_images-field_menu_image_item'
   $field_instances['field_collection_item-field_menu_images-field_menu_image_item'] = array(
     'bundle' => 'field_menu_images',
@@ -911,6 +948,7 @@ function splatnom_content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('ER Restaurant Menu Item');
   t('Images');
   t('Is Divider Center');
   t('Is Divider Left');

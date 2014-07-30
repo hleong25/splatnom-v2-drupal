@@ -12,6 +12,7 @@ dependencies[] = ds_format
 dependencies[] = ds_forms
 dependencies[] = ds_ui
 dependencies[] = entity_token
+dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = features_diff
 dependencies[] = module_filter

@@ -11,6 +11,92 @@ function splatnom_content_types_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'er_restaurant_menu_items';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'field_collection_item';
+  $view->human_name = 'ER Restaurant Menu Items';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Field collection item: Entity with the Menu Item (field_menu_item) */
+  $handler->display->display_options['relationships']['field_menu_item_field_collection_item']['id'] = 'field_menu_item_field_collection_item';
+  $handler->display->display_options['relationships']['field_menu_item_field_collection_item']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_menu_item_field_collection_item']['field'] = 'field_menu_item_field_collection_item';
+  $handler->display->display_options['relationships']['field_menu_item_field_collection_item']['required'] = TRUE;
+  /* Relationship: Field collection item: Entity with the Menu Section (field_menu_section) */
+  $handler->display->display_options['relationships']['field_menu_section_node']['id'] = 'field_menu_section_node';
+  $handler->display->display_options['relationships']['field_menu_section_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_menu_section_node']['field'] = 'field_menu_section_node';
+  $handler->display->display_options['relationships']['field_menu_section_node']['relationship'] = 'field_menu_item_field_collection_item';
+  $handler->display->display_options['relationships']['field_menu_section_node']['required'] = TRUE;
+  /* Field: Field collection item: Menu Item Name */
+  $handler->display->display_options['fields']['field_menu_item_name']['id'] = 'field_menu_item_name';
+  $handler->display->display_options['fields']['field_menu_item_name']['table'] = 'field_data_field_menu_item_name';
+  $handler->display->display_options['fields']['field_menu_item_name']['field'] = 'field_menu_item_name';
+  $handler->display->display_options['fields']['field_menu_item_name']['label'] = '';
+  $handler->display->display_options['fields']['field_menu_item_name']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Menu Section Title */
+  $handler->display->display_options['fields']['field_menu_section_title']['id'] = 'field_menu_section_title';
+  $handler->display->display_options['fields']['field_menu_section_title']['table'] = 'field_data_field_menu_section_title';
+  $handler->display->display_options['fields']['field_menu_section_title']['field'] = 'field_menu_section_title';
+  $handler->display->display_options['fields']['field_menu_section_title']['relationship'] = 'field_menu_item_field_collection_item';
+  $handler->display->display_options['fields']['field_menu_section_title']['label'] = '';
+  $handler->display->display_options['fields']['field_menu_section_title']['element_label_colon'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_menu_section_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['nid']['default_argument_options']['code'] = '// sample url: http://splatnom.local:89/entityreference/autocomplete/single/field_taggit_image_to_item/field_collection_item/field_menu_images/23
+if ((arg(0) == \'entityreference\') && (arg(1) == \'autocomplete\'))
+{
+  // if it\'s an entityreference and autocomplete
+  if (arg(5) == \'field_menu_images\')
+  {
+    // if the 5th item is \'field_menu_images\', then the next arg is the field collection id
+    $er_id = arg(6);
+    $fci = entity_load_single(\'field_collection_item\', $er_id);
+    $node = $fci->hostEntity();
+    return $node->nid;
+  }
+}
+return \'all\';';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Entity Reference */
+  $handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'field_menu_item_name' => 'field_menu_item_name',
+    'field_menu_section_title' => 0,
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $export['er_restaurant_menu_items'] = $view;
+
+  $view = new view();
   $view->name = 'restaurant_menu_images_gallery';
   $view->description = '';
   $view->tag = 'default';
