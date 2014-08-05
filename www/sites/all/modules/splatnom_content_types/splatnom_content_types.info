@@ -3,6 +3,7 @@ description = Content types of Splatnom
 core = 7.x
 package = Splatnom
 dependencies[] = addressfield
+dependencies[] = ds
 dependencies[] = ds_extras
 dependencies[] = entityreference
 dependencies[] = fe_block

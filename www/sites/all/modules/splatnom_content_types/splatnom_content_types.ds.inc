@@ -212,7 +212,7 @@ if ($can_edit): ?>
 <?php endif; ?>
 <?php //global $user; kpr(user_role_permissions($user->roles)); ?>
 ',
-      'format' => 'php_code',
+      'format' => 'ds_code',
     ),
     'use_token' => 1,
   );
