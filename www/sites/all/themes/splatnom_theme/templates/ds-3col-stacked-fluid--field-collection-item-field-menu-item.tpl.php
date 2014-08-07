@@ -14,17 +14,19 @@
   $is_divider    = false;
   $class_divider = '';
 
-  if (@$content['field_menu_item_is_divider_left']['#items'][0]['value'])
+  $menu_item_name = @$content['field_menu_item_name']['#object'];
+
+  if (@$menu_item_name->field_menu_item_is_divider_left['und'][0]['value'])
   {
       $is_divider    = true;
       $class_divider = 'group-divider-left';
   }
-  else if (@$content['field_menu_item_is_divider_centr']['#items'][0]['value'])
+  else if (@$menu_item_name->field_menu_item_is_divider_centr['und'][0]['value'])
   {
       $is_divider    = true;
       $class_divider = 'group-divider-center';
   }
-  else if (@$content['field_menu_item_is_divider_right']['#items'][0]['value'])
+  else if (@$menu_item_name->field_menu_item_is_divider_right['und'][0]['value'])
   {
       $is_divider    = true;
       $class_divider = 'group-divider-right';
