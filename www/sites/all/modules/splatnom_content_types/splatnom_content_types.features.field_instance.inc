@@ -26,6 +26,15 @@ function splatnom_content_types_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 1,
       ),
+      'view_er_restaurant_menu_item' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 1,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_er_restaurant_menu_item',
@@ -54,6 +63,16 @@ function splatnom_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'medium',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'view_er_restaurant_menu_item' => array(
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
@@ -144,10 +163,15 @@ function splatnom_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 9,
+      ),
+      'view_simple_menu_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -181,10 +205,15 @@ function splatnom_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 8,
+      ),
+      'view_simple_menu_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -218,10 +247,15 @@ function splatnom_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 7,
+      ),
+      'view_simple_menu_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -259,6 +293,12 @@ function splatnom_content_types_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'view_simple_menu_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_menu_item_is_spicy',
@@ -295,6 +335,12 @@ function splatnom_content_types_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 5,
       ),
+      'view_simple_menu_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_menu_item_is_vegetarian',
@@ -322,6 +368,13 @@ function splatnom_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'view_simple_menu_item' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
@@ -361,6 +414,12 @@ function splatnom_content_types_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
+      ),
+      'view_simple_menu_item' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'field_collection_item',

@@ -320,6 +320,18 @@ return \'all\';';
     'image_style' => 'large',
     'image_link' => 'file',
   );
+  /* Field: Field collection item: ER Restaurant Menu Item */
+  $handler->display->display_options['fields']['field_er_restaurant_menu_item']['id'] = 'field_er_restaurant_menu_item';
+  $handler->display->display_options['fields']['field_er_restaurant_menu_item']['table'] = 'field_data_field_er_restaurant_menu_item';
+  $handler->display->display_options['fields']['field_er_restaurant_menu_item']['field'] = 'field_er_restaurant_menu_item';
+  $handler->display->display_options['fields']['field_er_restaurant_menu_item']['label'] = '';
+  $handler->display->display_options['fields']['field_er_restaurant_menu_item']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_er_restaurant_menu_item']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_er_restaurant_menu_item']['settings'] = array(
+    'view_mode' => 'view_simple_menu_item',
+    'links' => 1,
+  );
+  $handler->display->display_options['fields']['field_er_restaurant_menu_item']['delta_offset'] = '0';
   $handler->display->display_options['displays'] = array(
     'page_1' => 'page_1',
     'default' => 0,

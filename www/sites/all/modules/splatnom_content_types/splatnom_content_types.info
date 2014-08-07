@@ -45,6 +45,7 @@ features[ds_layout_settings][] = node|new_restaurant_menu|default
 features[ds_layout_settings][] = node|restaurant_menu|default
 features[ds_vd][] = restaurant_menu_images_gallery-block-fields
 features[ds_vd][] = restaurant_menu_images_gallery-page_1-fields
+features[ds_view_modes][] = view_simple_menu_item
 features[fe_block_settings][] = views-0bb00382d381efc9cfeb899a45d11ad2
 features[fe_block_settings][] = views-81ea0fa54c0deb2eeaa6b37a017d4667
 features[features_api][] = api:2

@@ -284,6 +284,9 @@ a {
 .view-restaurant-menu-images-gallery .view-content .views-row img {
   border: 1px #b4b0ae solid;
 }
+.view-restaurant-menu-images-gallery .view-content .views-field-field-er-restaurant-menu-item .field-collection-item-field-menu-item {
+  display: inline-block;
+}
 
 .view-proximity-search-for-restaurant-menu .view-content .views-row {
   margin-bottom: 1em;
