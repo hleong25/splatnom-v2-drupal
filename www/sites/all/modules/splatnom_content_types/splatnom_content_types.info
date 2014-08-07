@@ -109,6 +109,7 @@ features[variable][] = comment_subject_field_new_restaurant_menu
 features[variable][] = comment_subject_field_restaurant_menu
 features[variable][] = date_format_custom_medium_date_time
 features[variable][] = ds_extras_vd
+features[variable][] = field_bundle_settings_field_collection_item__field_menu_item
 features[variable][] = field_bundle_settings_node__new_restaurant_menu
 features[variable][] = field_bundle_settings_node__restaurant_menu
 features[variable][] = menu_options_new_restaurant_menu
