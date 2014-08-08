@@ -4,6 +4,11 @@
   width: 70em;
 }
 
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+}
+
 img, media {
   max-width: 100%;
 }
