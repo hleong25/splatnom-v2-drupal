@@ -1,4 +1,7 @@
-input[type="text"],
-input[type="password"] {
-    width: 100%;
+// set the textbox to be 100% if it's less than the max-width
+@include breakpoint(max-width $tab, true) {
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+    }
 }
