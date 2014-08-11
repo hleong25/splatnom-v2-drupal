@@ -24,6 +24,7 @@ features[user_permission][] = create new_restaurant_menu content
 features[user_permission][] = delete own new_restaurant_menu content
 features[user_permission][] = edit own new_restaurant_menu content
 features[user_role][] = menu editor
+features[variable][] = admin_menu_cache_client
 features[variable][] = comment_anonymous_page
 features[variable][] = comment_default_mode_page
 features[variable][] = comment_default_per_page_page
