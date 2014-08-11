@@ -101,6 +101,7 @@ DirectoryIndex index.php index.html index.htm
 
   # Splatnom - JS Module
   # Rewrite JavaScript callback URLs of the form js.php?q=x.
+  # follow up - https://www.drupal.org/node/2216061
   # https://www.drupal.org/node/2216061#comment-8777675
   # 1. www.splatnom.com/admin/config/administration/admin_menu
   # 2. Disable Performance > Cache menu in client-side browser
