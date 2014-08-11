@@ -5,6 +5,7 @@ package = Splatnom
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = features_roles_permissions
+dependencies[] = js
 dependencies[] = node
 dependencies[] = path_alias_xt
 dependencies[] = role_delegation
