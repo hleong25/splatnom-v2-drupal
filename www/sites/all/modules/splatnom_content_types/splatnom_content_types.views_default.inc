@@ -253,7 +253,7 @@ return \'all\';';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Go back to <?php print l(\'%1\', \'node/[nid]\', array(\'html\' => TRUE)); ?>.';
-  $handler->display->display_options['header']['area']['format'] = 'ds_code';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */

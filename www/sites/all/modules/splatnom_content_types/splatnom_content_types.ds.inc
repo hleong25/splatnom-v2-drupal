@@ -212,7 +212,7 @@ if ($can_edit): ?>
 <?php endif; ?>
 <?php //global $user; kpr(user_role_permissions($user->roles)); ?>
 ',
-      'format' => 'ds_code',
+      'format' => 'php_code',
     ),
     'use_token' => 1,
   );
@@ -236,7 +236,7 @@ $is_veggie = $entity->field_menu_item_is_vegetarian[\'und\'][0][\'value\'];
 if ($is_spicy) print \'<span class="icon is-spicy">&nbsp;</span>\';
 if ($is_veggie) print \'<span class="icon is-veggie">&nbsp;</span>\';
 ?>',
-      'format' => 'ds_code',
+      'format' => 'php_code',
     ),
     'use_token' => 0,
   );
