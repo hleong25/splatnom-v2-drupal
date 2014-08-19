@@ -99,18 +99,6 @@ DirectoryIndex index.php index.html index.htm
   # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   # RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
 
-  # Splatnom - JS Module
-  # Rewrite JavaScript callback URLs of the form js.php?q=x.
-  # follow up - https://www.drupal.org/node/2216061
-  # https://www.drupal.org/node/2216061#comment-8777675
-  # 1. www.splatnom.com/admin/config/administration/admin_menu
-  # 2. Disable Performance > Cache menu in client-side browser
-  RewriteCond %{REQUEST_URI} !^\/([a-z]{2}\/)?js\/admin_menu\/cache\/.*
-  RewriteCond %{REQUEST_URI} ^\/([a-z]{2}\/)?js\/.*
-  RewriteRule ^(.*)$ js.php?q=$1 [L,QSA]
-  RewriteCond %{QUERY_STRING} (^|&)q=((\/)?[a-z]{2})?(\/)?js\/.*
-  RewriteRule .* js.php [L]
-
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
   # For example if your site is at http://example.com/drupal uncomment and
@@ -127,7 +115,6 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !=/favicon.ico
   RewriteRule ^ index.php [L]
-  #RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 
   # Rules to correctly serve gzip compressed CSS and JS files.
   # Requires both mod_rewrite and mod_headers to be enabled.
