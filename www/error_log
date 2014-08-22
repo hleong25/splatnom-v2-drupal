@@ -1,1 +1,0 @@
-[22-Jun-2014 23:32:30 America/Los_Angeles] PHP Fatal error:  Call to undefined function filefield_sources_save_file() in /home3/hleong25/project_menu/splatnom-v2-drupal/www/sites/all/modules/field_collection_bulkupload/field_collection_bulkupload.module on line 173
