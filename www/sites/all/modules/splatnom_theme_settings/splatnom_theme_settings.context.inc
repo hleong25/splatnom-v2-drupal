@@ -122,9 +122,9 @@ function splatnom_theme_settings_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-8' => array(
+        'block-10' => array(
           'module' => 'block',
-          'delta' => '8',
+          'delta' => '10',
           'region' => 'content',
           'weight' => '-10',
         ),
