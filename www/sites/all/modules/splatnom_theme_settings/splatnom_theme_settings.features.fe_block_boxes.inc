@@ -90,6 +90,16 @@ function splatnom_theme_settings_default_fe_block_boxes() {
   $export['header_nologo'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Links on the header';
+  $fe_block_boxes->format = 'php_code';
+  $fe_block_boxes->machine_name = 'links_on_the_header';
+  $fe_block_boxes->body = '<?php
+   echo date(\'m/d/Y\');
+?>';
+
+  $export['links_on_the_header'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'User profile links for admins';
   $fe_block_boxes->format = 'filtered_html';
   $fe_block_boxes->machine_name = 'user_profile_links_for_admins';

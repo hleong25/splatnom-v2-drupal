@@ -209,5 +209,39 @@ function splatnom_theme_settings_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['block-user_profile_links_for_admins'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'machine_name' => 'user_profile_links_for_admins',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(
+      'administrator' => 3,
+    ),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'splatnom_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'splatnom_theme',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   return $export;
 }
