@@ -89,5 +89,15 @@ function splatnom_theme_settings_default_fe_block_boxes() {
 
   $export['header_nologo'] = $fe_block_boxes;
 
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'User profile links for admins';
+  $fe_block_boxes->format = 'filtered_html';
+  $fe_block_boxes->machine_name = 'user_profile_links_for_admins';
+  $fe_block_boxes->body = '<ul>
+<li><a href="/menu/add">Add new menu</a></li>
+</ul>';
+
+  $export['user_profile_links_for_admins'] = $fe_block_boxes;
+
   return $export;
 }

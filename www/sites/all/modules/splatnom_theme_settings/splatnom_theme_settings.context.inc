@@ -103,5 +103,42 @@ function splatnom_theme_settings_context_default_contexts() {
   t('layout');
   $export['layout-user-account'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'user-profile';
+  $context->description = 'Custom blocks for user profiles';
+  $context->tag = 'users';
+  $context->conditions = array(
+    'user_page' => array(
+      'values' => array(
+        'view' => 'view',
+      ),
+      'options' => array(
+        'mode' => 'all',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+      'layout' => 'default-splatnom',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Custom blocks for user profiles');
+  t('users');
+  $export['user-profile'] = $context;
+
   return $export;
 }

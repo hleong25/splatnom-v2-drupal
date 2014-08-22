@@ -24,6 +24,9 @@
 
 7. URL aliases
     URL: <site>/admin/config/search/path
+    Content Type: Restaurant Menu
+        Existing system path (System): node/add/restaurant-menu
+        Path alias (Alias): menu/add
     Content Type: New Restaurant Menu
         Existing system path (System): node/add/new-restaurant-menu
         Path alias (Alias): new-restaurant-menu/add
