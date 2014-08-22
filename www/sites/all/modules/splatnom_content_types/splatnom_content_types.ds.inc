@@ -236,7 +236,7 @@ $is_veggie = $entity->field_menu_item_is_vegetarian[\'und\'][0][\'value\'];
 if ($is_spicy) print \'<span class="icon is-spicy">&nbsp;</span>\';
 if ($is_veggie) print \'<span class="icon is-veggie">&nbsp;</span>\';
 ?>',
-      'format' => 'php_code',
+      'format' => 'ds_code',
     ),
     'use_token' => 0,
   );
