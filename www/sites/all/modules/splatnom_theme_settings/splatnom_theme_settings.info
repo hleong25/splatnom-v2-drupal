@@ -29,6 +29,7 @@ features[fe_block_settings][] = block-header_logo
 features[fe_block_settings][] = block-header_logoff
 features[fe_block_settings][] = block-header_new_menu_link
 features[fe_block_settings][] = block-header_nologo
+features[fe_block_settings][] = block-links_on_the_header
 features[fe_block_settings][] = block-user_profile_links_for_admins
 features[features_api][] = api:2
 features[views_view][] = proximity_search_for_restaurant_menu
