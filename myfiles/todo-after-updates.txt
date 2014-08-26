@@ -31,3 +31,13 @@
         Existing system path (System): node/add/new-restaurant-menu
         Path alias (Alias): new-restaurant-menu/add
 
+8. Performance for production
+    - http://www.splatnom.com/admin/config/development/performance
+      Enable Cache blocks in Caching
+      Enable Aggregate and compress CSS files in Bandwidth Optimization
+      Enable Aggregate JavaScript files in Bandwidth Optimization
+    - http://www.splatnom.com/admin/config/system/cron
+      Disable drupal cron
+      Add cron to host using "curl -s <cron.php>"
+    - http://www.splatnom.com/admin/appearance/settings/splatnom_theme
+      Disable LiveReload
