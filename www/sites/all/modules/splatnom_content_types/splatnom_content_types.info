@@ -123,6 +123,7 @@ features[variable][] = node_preview_restaurant_menu
 features[variable][] = node_submitted_new_restaurant_menu
 features[variable][] = node_submitted_restaurant_menu
 features[variable][] = pathauto_node_new_restaurant_menu_pattern
+features[variable][] = xmlsitemap_settings_node_restaurant_menu
 features[views_view][] = er_restaurant_menu_items
 features[views_view][] = restaurant_menu_images_gallery
 features[views_view][] = restaurant_menu_navigation
