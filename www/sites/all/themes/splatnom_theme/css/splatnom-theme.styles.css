@@ -322,6 +322,11 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+.views-exposed-form-proximity-search-for-restaurant-menu-page .views-exposed-widgets {
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+}
 .views-exposed-form-proximity-search-for-restaurant-menu-page .description {
   font-size: 0.75em;
   margin-top: 3px;
@@ -331,6 +336,9 @@ a {
 }
 .views-exposed-form-proximity-search-for-restaurant-menu-page #edit-location-origin {
   width: 10em;
+}
+.views-exposed-form-proximity-search-for-restaurant-menu-page .views-submit-button {
+  padding-right: 0;
 }
 .views-exposed-form-proximity-search-for-restaurant-menu-page .form-type-geofield-proximity {
   margin: 0;

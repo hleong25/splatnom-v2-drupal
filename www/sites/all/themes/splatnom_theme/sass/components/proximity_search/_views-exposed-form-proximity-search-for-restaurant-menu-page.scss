@@ -8,6 +8,12 @@
         @include center-block;
     }
 
+    .views-exposed-widgets {
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+    }
+
     .description {
         font-size: 0.75em;
         margin-top: 3px;
@@ -19,6 +25,10 @@
 
     #edit-location-origin {
         width: 10em;
+    }
+
+    .views-submit-button {
+        padding-right: 0;
     }
 
     .form-type-geofield-proximity {
