@@ -10,6 +10,7 @@ dependencies[] = node
 dependencies[] = path_alias_xt
 dependencies[] = php
 dependencies[] = role_delegation
+dependencies[] = spamicide
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = uuid
