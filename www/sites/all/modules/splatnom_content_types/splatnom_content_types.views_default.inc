@@ -376,6 +376,7 @@ return \'all\';';
   $handler->display->display_options['fields']['item_id']['label'] = '';
   $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['item_id']['separator'] = '';
   /* Field: Field collection item: Menu Section Title */
   $handler->display->display_options['fields']['field_menu_section_title']['id'] = 'field_menu_section_title';
   $handler->display->display_options['fields']['field_menu_section_title']['table'] = 'field_data_field_menu_section_title';
