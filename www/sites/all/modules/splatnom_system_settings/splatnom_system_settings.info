@@ -47,6 +47,7 @@ features[variable][] = pathauto_node_page_pattern
 features[variable][] = pathauto_node_pattern
 features[variable][] = pathauto_node_restaurant_menu_pattern
 features[variable][] = pathauto_user_pattern
+features[variable][] = spamicide_log_attempts
 features[variable][] = uuid_features_entity_node
 features[variable][] = uuid_features_entity_taxonomy_term
 features[variable][] = uuid_features_file_assets_path
