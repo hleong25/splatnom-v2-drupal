@@ -23,7 +23,9 @@ scripts[] = js/splatnom-theme.behaviors.js
 ; ========================================
 regions[header_left] = Header Left
 regions[header_right] = Header Right
+regions[content_header] = Content Header
 regions[content] = Content
+regions[content_footer] = Content Footer
 regions[front_page_content] = Front Page Content
 regions[sidebar] = Sidebar
 regions[footer] = Footer

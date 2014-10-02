@@ -11,11 +11,17 @@
   </header>
 
   <div class="l-main">
-    <div class="l-sidebar" role="main">
+    <div class="l-sidebar">
       <?php print render($page['sidebar']); ?>
+    </div>
+    <div class="l-content-header">
+      <?php print render($page['content_header']); ?>
     </div>
     <div class="l-content" role="main">
       <?php print render($page['content']); ?>
+    </div>
+    <div class="l-content-footer">
+      <?php print render($page['content_footer']); ?>
     </div>
   </div>
 

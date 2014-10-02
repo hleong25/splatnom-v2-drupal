@@ -30,7 +30,14 @@ function splatnom_theme_settings_context_default_contexts() {
   );
   $context->reactions = array(
     'block' => array(
-      'blocks' => array(),
+      'blocks' => array(
+        'views-178353e7648da51397e71c9f3cde95d4' => array(
+          'module' => 'views',
+          'delta' => '178353e7648da51397e71c9f3cde95d4',
+          'region' => 'content_header',
+          'weight' => '-10',
+        ),
+      ),
       'layout' => 'default-splatnom',
     ),
   );
@@ -57,7 +64,14 @@ function splatnom_theme_settings_context_default_contexts() {
   );
   $context->reactions = array(
     'block' => array(
-      'blocks' => array(),
+      'blocks' => array(
+        'views-178353e7648da51397e71c9f3cde95d4' => array(
+          'module' => 'views',
+          'delta' => '178353e7648da51397e71c9f3cde95d4',
+          'region' => 'front_page_content',
+          'weight' => '-10',
+        ),
+      ),
       'layout' => 'home',
     ),
   );

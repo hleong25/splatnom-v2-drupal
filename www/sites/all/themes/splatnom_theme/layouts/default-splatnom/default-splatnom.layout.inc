@@ -6,7 +6,9 @@ template = default-splatnom-layout
 regions[header_left] = Header Left
 regions[header_right] = Header Right
 regions[sidebar] = Sidebar
+regions[content_header] = Content Header
 regions[content] = Content
+regions[content_footer] = Content Footer
 regions[footer] = Footer
 
 ; Styles
