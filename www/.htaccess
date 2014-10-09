@@ -7,6 +7,12 @@
   Order allow,deny
 </FilesMatch>
 
+# prevent site fingerprinting via release related files
+<FilesMatch "(^CHANGELOG|COPYRIGHT|INSTALL|LICENSE|MAINTAINERS|README|UPGRADE).*\.txt$">
+  Order deny,allow
+  Deny from all
+</FilesMatch>
+
 # Don't show directory listings for URLs which map to a directory.
 Options -Indexes
 
