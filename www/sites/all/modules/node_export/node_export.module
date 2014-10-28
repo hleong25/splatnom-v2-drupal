@@ -967,13 +967,47 @@ function node_export_format_handlers() {
   return $format_handlers;
 }
 
+/**
+ * Get entity type and bundle of the given entity. Works for nodes and field
+ * collection items.
+ * 
+ * @param $entity
+ *   Entity to get information of.
+ * 
+ * @return
+ *   Associative array with the 'type' and 'bundle' fields.
+ */
+function _node_export_entity_info($entity) {
+  $info = array();
+
+  if (method_exists($entity, 'entityType')
+      && $entity->entityType() == 'field_collection_item') {
+    $info['type'] = $entity->entityType();
+
+    // Field the collection is attached to.
+    $info['bundle'] = $entity->field_name;
+  }
+  else {
+    $info['type'] = 'node';
+    $info['bundle'] = $entity->type;
+  }
+
+  return $info;
+}
 
 /**
  * Handle exporting file fields.
+ * 
+ * @param $entity
+ *   Node or field_collection_item object.
+ * @param $original_entity
+ *   Unused...
  */
-function node_export_file_field_export(&$node, $original_node) {
+function node_export_file_field_export(&$entity, $original_entity) {
+  $entity_info = _node_export_entity_info($entity);
+
   $types = array_filter(variable_get('node_export_file_types', array()));
-  if (in_array($node->type, $types)) {
+  if ($entity_info['type'] != 'node' || in_array($entity->type, $types)) {
     $assets_path = variable_get('node_export_file_assets_path', '');
     $export_mode = variable_get('node_export_file_mode', 'inline');
 
@@ -1008,11 +1042,11 @@ function node_export_file_field_export(&$node, $original_node) {
     }
 
     // get all fields from this node type
-    $fields = field_info_instances('node', $node->type);
+    $fields = field_info_instances($entity_info['type'],
+      $entity_info['bundle']);
     foreach($fields as $field_instance) {
-
       // load field infos to check the type
-      $field = &$node->{$field_instance['field_name']};
+      $field = &$entity->{$field_instance['field_name']};
       $info = field_info_field($field_instance['field_name']);
 
       $supported_fields = array_map('trim', explode(',', variable_get('node_export_file_supported_fields', 'file, image')));
@@ -1071,14 +1105,20 @@ function node_export_file_field_export(&$node, $original_node) {
 
 /**
  * Handle importing file fields.
+ * 
+ * @param $entity
+ *   Node or field_collection_item object.
+ * @param $original_entity
+ *   Unused...
  */
-function node_export_file_field_import(&$node, $original_node) {
-  // Get all fields from this node type.
-  $fields = field_info_instances('node', $node->type);
-  foreach($fields as $field_instance) {
+function node_export_file_field_import(&$entity, $original_entity) {
+  $entity_info = _node_export_entity_info($entity);
 
+  // Get all fields from this node type.
+  $fields = field_info_instances($entity_info['type'], $entity_info['bundle']);
+  foreach($fields as $field_instance) {
     // Load field info to check the type.
-    $field = &$node->{$field_instance['field_name']};
+    $field = &$entity->{$field_instance['field_name']};
     $info = field_info_field($field_instance['field_name']);
 
     $supported_fields = array_map('trim', explode(',', variable_get('node_export_file_supported_fields', 'file, image')));
@@ -1100,7 +1140,6 @@ function node_export_file_field_import(&$node, $original_node) {
             if ($result == TRUE && isset($file->fid)) {
               $field[$language][$i] = (array)$file;
             }
-
           }
         }
       }
