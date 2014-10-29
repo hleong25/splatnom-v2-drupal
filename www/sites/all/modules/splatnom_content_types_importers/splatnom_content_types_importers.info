@@ -1,0 +1,12 @@
+name = Splatnom content types importers
+description = Feeds importer for Splatnom content types
+core = 7.x
+package = Splatnom
+dependencies[] = ctools
+dependencies[] = feeds
+dependencies[] = feeds_ui
+dependencies[] = field_collection_feeds
+dependencies[] = splatnom_content_types
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = import_cvs_as_menu_items

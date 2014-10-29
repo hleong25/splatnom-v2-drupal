@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Splatnom content types importers feature.
+ */
+
+include_once 'splatnom_content_types_importers.features.inc';
