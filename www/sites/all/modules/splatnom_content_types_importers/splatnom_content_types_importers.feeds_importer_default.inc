@@ -90,7 +90,7 @@ function splatnom_content_types_importers_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '0',
+        'update_existing' => '2',
         'update_non_existent' => 'skip',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
