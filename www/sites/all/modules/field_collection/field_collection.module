@@ -419,18 +419,6 @@ class FieldCollectionItemEntity extends Entity {
           $query->age(FIELD_LOAD_REVISION);
         }
         $result = $query->execute();
-        // When revisioning is enabled, {field_collection_item_revision}
-        // might not be written at this point yet (e.g. when arriving here
-        // from field_collection_field_update().) If so, let's use the
-        // previous revision to determine the host entity.
-        if (empty($result)) {
-          $query = new EntityFieldQuery();
-          $query->fieldCondition($this->fieldInfo(), 'revision_id', $this->original->revision_id);
-          if (!$this->isInUse()) {
-            $query->age(FIELD_LOAD_REVISION);
-          }
-          $result = $query->execute();
-        }
         list($this->hostEntityType, $data) = each($result);
 
         if ($this->isInUse()) {
@@ -1075,38 +1063,6 @@ function field_collection_field_delete($entity_type, $entity, $field, $instance,
     }
 
     entity_delete_multiple('field_collection_item', $ids);
-  }
-}
-
-/**
- * Implements hook_field_attach_insert().
- *
- * Resave field collections after host entities are created.
- * This allows features including use of host entity tokens.
- */
-function field_collection_field_attach_insert($host_entity_type, $host_entity) {
-  $options = array(
-    'default' => FALSE,
-    'deleted' => FALSE,
-    'language' => NULL,
-  );
-  list(, , $bundle) = entity_extract_ids($host_entity_type, $host_entity);
-  $instances = _field_invoke_get_instances($host_entity_type, $bundle, $options);
-  foreach ($instances as $instance) {
-    $field = field_info_field_by_id($instance['field_id']);
-    if ($field['type'] == 'field_collection') {
-      $field_name = $field['field_name'];
-      $available_languages = field_available_languages($host_entity_type, $field);
-      $languages = _field_language_suggestion($available_languages, $options['language'], $field_name);
-      foreach ($languages as $langcode) {
-        $items = isset($host_entity->{$field_name}[$langcode]) ? $host_entity->{$field_name}[$langcode] : array();
-        foreach ($items as &$item) {
-          if ($entity = field_collection_field_get_entity($item)) {
-            $entity->save(TRUE);
-          }
-        }
-      }
-    }
   }
 }
 
@@ -2039,36 +1995,4 @@ function field_collection_devel_generate($object, $field, $instance, $bundle) {
  */
 function field_collection_hide_blank_items($field) {
   return !empty($field['settings']['hide_blank_items']) && $field['cardinality'] == FIELD_CARDINALITY_UNLIMITED;
-}
-
-/**
- * Implements hook_field_attach_insert().
- *
- * Resave field collections after host entities are created.
- * This allows features including use of host entity tokens.
- */
-function field_collection_field_attach_update($host_entity_type, $host_entity) {
-  $options = array(
-    'default' => FALSE,
-    'deleted' => FALSE,
-    'language' => NULL,
-  );
-  list(, , $bundle) = entity_extract_ids($host_entity_type, $host_entity);
-  $instances = _field_invoke_get_instances($host_entity_type, $bundle, $options);
-  foreach ($instances as $instance) {
-    $field = field_info_field_by_id($instance['field_id']);
-    if ($field['type'] == 'field_collection') {
-      $field_name = $field['field_name'];
-      $available_languages = field_available_languages($host_entity_type, $field);
-      $languages = _field_language_suggestion($available_languages, $options['language'], $field_name);
-      foreach ($languages as $langcode) {
-        $items = isset($host_entity->{$field_name}[$langcode]) ? $host_entity->{$field_name}[$langcode] : array();
-        foreach ($items as &$item) {
-          if ($entity = field_collection_field_get_entity($item)) {
-            $entity->save(TRUE);
-          }
-        }
-      }
-    }
-  }
 }
