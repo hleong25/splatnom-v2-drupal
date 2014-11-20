@@ -1,5 +1,5 @@
 diff --git a/www/sites/all/modules/field_collection/field_collection.module b/www/sites/all/modules/field_collection/field_collection.module
-index c820057..34f0aef 100644
+index 3a8f9e9..4774d83 100644
 --- a/www/sites/all/modules/field_collection/field_collection.module
 +++ b/www/sites/all/modules/field_collection/field_collection.module
 @@ -419,6 +419,18 @@ class FieldCollectionItemEntity extends Entity {
@@ -60,9 +60,9 @@ index c820057..34f0aef 100644
   * Implements hook_field_delete_revision().
   */
  function field_collection_field_delete_revision($entity_type, $entity, $field, $instance, $langcode, &$items) {
-@@ -1983,3 +2027,35 @@ function field_collection_devel_generate($object, $field, $instance, $bundle) {
-     'revision_id' => $field_collection->revision_id,
-   );
+@@ -1996,3 +2040,35 @@ function field_collection_devel_generate($object, $field, $instance, $bundle) {
+ function field_collection_hide_blank_items($field) {
+   return !empty($field['settings']['hide_blank_items']) && $field['cardinality'] == FIELD_CARDINALITY_UNLIMITED;
  }
 +
 +/**
